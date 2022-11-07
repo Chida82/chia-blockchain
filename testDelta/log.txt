@@ -1,0 +1,2358 @@
+
+============================= test session starts =============================
+platform win32 -- Python 3.8.10, pytest-7.2.0, pluggy-1.0.0 -- c:\github\Chida82\chia-blockchain\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: c:\github\Chida82\chia-blockchain, configfile: pytest.ini
+plugins: asyncio-0.20.1, cov-4.0.0, xdist-3.0.2
+asyncio: mode=strict
+gw0 I / gw1 I / gw2 I / gw3 I
+
+[gw0] win32 Python 3.8.10 cwd: c:\github\Chida82\chia-blockchain
+
+[gw1] win32 Python 3.8.10 cwd: c:\github\Chida82\chia-blockchain
+
+[gw2] win32 Python 3.8.10 cwd: c:\github\Chida82\chia-blockchain
+
+[gw3] win32 Python 3.8.10 cwd: c:\github\Chida82\chia-blockchain
+
+[gw0] Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+
+[gw1] Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+
+[gw3] Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+
+[gw2] Python 3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]
+gw0 [1] / gw1 [1] / gw2 [1] / gw3 [1]
+
+scheduling tests via LoadScheduling
+
+tests/core/data_layer/test_data_store.py::test_data_server_files_from_snapshot[True] 
+[gw0] [1/1] FAILED tests/core/data_layer/test_data_store.py::test_data_server_files_from_snapshot[True] 
+
+================================== FAILURES ===================================
+_________________ test_data_server_files_from_snapshot[True] __________________
+[gw0] win32 -- Python 3.8.10 c:\github\Chida82\chia-blockchain\venv\Scripts\python.exe
+tests\core\data_layer\test_data_store.py:1299: in test_data_server_files_from_snapshot
+    await insert_into_data_store_from_file(data_store, tree_id, root.node_hash, tmp_path.joinpath(filename))
+chia\data_layer\download_data.py:87: in insert_into_data_store_from_file
+    await data_store.insert_node(node_type, serialized_node.value1, serialized_node.value2)
+chia\data_layer\data_store.py:254: in insert_node
+    await self._insert_node(node_hash, node_type, bytes32(value1), bytes32(value2), None, None)
+chia\data_layer\data_store.py:235: in _insert_node
+    await writer.execute(
+venv\lib\site-packages\aiosqlite\core.py:184: in execute
+    cursor = await self._execute(self._conn.execute, sql, parameters)
+venv\lib\site-packages\aiosqlite\core.py:129: in _execute
+    return await future
+venv\lib\site-packages\aiosqlite\core.py:102: in run
+    result = function()
+E   sqlite3.IntegrityError: FOREIGN KEY constraint failed
+---------------------------- Captured stdout call -----------------------------
+Test start
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000107', 'value2': '0x0000020e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ca', 'value2': '0x00000394'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7a68293d08b6d92d677a7d2108de095ad14b8f0d53faf4ce81ba805dec555a00',
+ 'value2': '0x9300f083e11c9dbb6582719d479571c17b41c13ddcd21986765c564689aad140'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000155', 'value2': '0x000002aa'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001d4', 'value2': '0x000003a8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1b93955c04daadfafd2cce3c01062afbf46d3e226b62ba14ddf2ea6d90f722a0',
+ 'value2': '0x9b4ff43df9d9fc6dcf6cd8c25c64fb2e98c15343505f5dee9dfe8b4d3a8b8320'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000162', 'value2': '0x000002c4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e9', 'value2': '0x000003d2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000021', 'value2': '0x00000042'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1e8e2206ba055cb55bb858e466505f79e27a69434ec0e5211c1f71ea09d4d4e0',
+ 'value2': '0x082ee9ee2d187eaa819792cbcbaaed5fa6a1c55866acb2d3a9e3e40416cddd30'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000016a', 'value2': '0x000002d4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe38f69f4d281b08cccb45ff9c5d9212654f523d265bf061809a86f19c160d90d',
+ 'value2': '0xb29611e9e508154440932e1f692b175bc756deeb0ca645690f7df8e07b39cee0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x10fdc07713e458fa1f4e7415dab6edefb0397406f8764588b4aaa24c0cebb960',
+ 'value2': '0xb89daaf4f31663c83a06bc1787564aea7b6ed354ea5709c5c93e3fe0415a137c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3c7f9a49dde6bf86ca45927b3921ebd94b0d2a866a32e62cff14b7ff8ffe5323',
+ 'value2': '0xf3dd22b2dd9e5db613424636919ff827f6e503f02214c73f90743d59042a0294'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8899b40d58007047931fcc119fcfaf16fcde795d733d07d222bc3bb207375026',
+ 'value2': '0x891fa9f68e8ab5ab8eb666730e5120e812010fe43a53cc55942e93cbba4ea684'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000049', 'value2': '0x00000092'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ab', 'value2': '0x00000156'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3260abbf37eaa7851208fd044dc1a4f54d926d38fbfa4a271adfa5e8efc9d810',
+ 'value2': '0x8fec2b89d4b377a827c531acc8712f0fb28fc869a28abe9969442b0014345ed0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b6', 'value2': '0x0000036c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000104', 'value2': '0x00000208'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x336619e8dda8ea4d3e3804d27617711fcb63d27913667770411162c1b3945630',
+ 'value2': '0x11eb08503847f1115b213eda133327e89ccae29c2c40fa16e4cc95c33e5a6bb0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000149', 'value2': '0x00000292'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000050', 'value2': '0x000000a0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x265e592b40343ff206e14dc61746ff0013926c192e5f6e102be81158132d95f0',
+ 'value2': '0xfd510573ee74701bcf1eaa18c71bf7e2abd8d293b9699a0094c8b12e861b41b0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xff85822cc7f8c901e681bbf809d7be88086e55c261773672a673756258b38204',
+ 'value2': '0x0917e88256b919d57eb0a02d134fdc026ac9f2feac352a0e3378ed651148f753'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x354ea3de4e275b9e83976941766bc9cc434d5fa1a346498c779a7e4e27026fc9',
+ 'value2': '0xf1a01e8b683d3812727b503294c05e05cdbaa2c54d30c380e542f7fbb6ad4719'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa39c61f537b21d5245089b114d8e28e94a5f84376911242f2facc909780b294f',
+ 'value2': '0xd5c4ddfbf3bb81e0ccf0bf1bd4ef518a4c93ac2e426ebbd0d07596e5fa1d2b25'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000051', 'value2': '0x000000a2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000d5', 'value2': '0x000001aa'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000140', 'value2': '0x00000280'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x78b5006b8bce384f9896256757f4e07e2bed2e3331d1d4e19c8fe64f0d2146c8',
+ 'value2': '0xbdbc5a440eb49c138f1dd99b491e8cc6c651cf9644e28a1dba27de30023a3348'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000068', 'value2': '0x000000d0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000017e', 'value2': '0x000002fc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd48c74ff64ec6581b88bbe1a093afb88968bb9a8e8957c2b569aa0150b8ef008',
+ 'value2': '0x8824ee1a4613f60f142b0745c83c0386ba8c1ed570731a496904b85f3023c1c8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1d122c854bf9b0846e1ba398e3d2051c918c9305da7fee9a3aea267f58351865',
+ 'value2': '0x8f5a61e17cb132cc82980990f4c689d1924eb99502bdd318eeb5325efac0ab33'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x486cdf53942dabe973336a095d576232a0d4d5009deb2673017f0e469cdad5c8',
+ 'value2': '0x1ef50e29a9b0b0467891ddfa11e2e05b20fd0995849be2b962ad07999dec4943'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000016d', 'value2': '0x000002da'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f1', 'value2': '0x000003e2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000b5', 'value2': '0x0000016a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x75082739ce45fc00b3d26578a7830fccae87cb04792a7c33b86007c283b24728',
+ 'value2': '0x45d7d5cd418043e4c6b2f008f018cf72a8adcb611fbccf1914e08226935c04a8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4db8567ba700fa20b1767bdd95e5f0799d9d1ec04005cbcb5c99ea73e839ed28',
+ 'value2': '0xb388b0e2250ef6ed261c5e6b6de480acd3908e7dd9e4092a0a7a58b72a7c835e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000086', 'value2': '0x0000010c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001cd', 'value2': '0x0000039a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5d2257669f760326ab963d7f18ad4f23fa533c90f6345862d08794e6f94a6b28',
+ 'value2': '0xa3391acd331792a3e357af75b359563d21ed80b022a2ad9e16e147a61817b1a8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x448c84df75764cb77ca3e87780c0c6d93daab058921fd4fb680c432cc49d79a1',
+ 'value2': '0xf2a241be150e5ccf9887e6dd97a10ebbbfc173ee28101a158fc40a95ac5298a0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000036', 'value2': '0x0000006c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000167', 'value2': '0x000002ce'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x54b5be021c64d787631fb9fc9892024b555b8982ad3ce15aac51a862776147d8',
+ 'value2': '0xcd0eb95e1e6d4351a6200b8d44c533498893de3fe5e22ce0dabfe545ee5b4ae8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x382fa605d4d879c3cce1879295fc5d99555e85db743271543eaf3881def174ea',
+ 'value2': '0x74b2f89d87b5c3c0adc6d35354706b85044775633aa4d23f5ad064a3aa88c080'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x203027f9a84a7554078068ee4ee5093c4f551758e99c5f2b0ff0927d28995fb8',
+ 'value2': '0x13cab15be94c947000cf66e9e1c260f721570e58b9f83870afe810ce1755cc94'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000019a', 'value2': '0x00000334'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000d4', 'value2': '0x000001a8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x20835f968f91684a825bca47389dec8d4485f8495083fb181b9099699bf37998',
+ 'value2': '0x3913952633df9b1a15ee720d4cc63790ed0d30d8430d1f477c4bafd38615b118'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000147', 'value2': '0x0000028e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b7', 'value2': '0x0000036e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x45a469aa4b9a3eee59ac4cdd3d3d93118e7c21379bf0cfaadd990c024620fdd8',
+ 'value2': '0xf0a1b6b022f57e00dd6be89f1eb9b573b42fd4b50ab7e0cd528e827caa0fc858'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000000e', 'value2': '0x0000001c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001df', 'value2': '0x000003be'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000159', 'value2': '0x000002b2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1872d35904d92c9db555e2e36e1c9963772452021297eabfb9fb4928df83e5d8',
+ 'value2': '0x304f70eb778fc16acb2e540c827ab9a51082ed0c9e9247a422386f4c51f2ffd8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000148', 'value2': '0x00000290'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfe76640dfda2cbbf13e8f3885bdd7084129abfaa3751a1d460a468a93396f55e',
+ 'value2': '0xe46d7f6d000e622767bf34410ddea308cd3d7e305e132e2f4a2d4074804f8dd8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2aaff8b08356926d87c7fd7cb7a23e9384f1f98226ef30a80e79aa3117c7455c',
+ 'value2': '0x3c583817dda0bfff7d2249f25d3f52a3568338550d2832576e279298b9ab898b'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x04a677cdf85f7440f7f5102118d330d33933d0e9f42404f1c5fa7e06aa48e959',
+ 'value2': '0x566587e70370097df7013fb83de73c327aac3d50b71e29b219f81f6779166afe'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5bfe00d72b2da44930e5a748b2aa693b5aae833256eb47ec0f13bb4e7d5d2316',
+ 'value2': '0xd55435984de1d9c8023a9bada9ee838fd42efc6729d2711f749b885f0d672ae8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000080', 'value2': '0x00000100'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc16d7bf9212a85bb16acea003a0c4b30214e1aca6b64160794fb275193e75161',
+ 'value2': '0x2632a86a171399ef77f3a3a4a8d9c0578f4435f363e6bcf8fbbccabbc4a93278'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb8bdd21190646388bf8a16509a34d8b9bc0cdea3890ea11ed9917d5972642fcd',
+ 'value2': '0xe7fe09cc3eb7b99442e9cf385a259814bb0f857b443cef57de6c11ffddf93020'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc8410778bddcc89f51760bec33c519105279747d3f12fde7cea300b2e6a83f5a',
+ 'value2': '0x6f90f034cc53a08b3de6b1021b683985c137fe00116d23c5c532b1b73e32359f'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000015e', 'value2': '0x000002bc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000014a', 'value2': '0x00000294'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7013ce8f32b4e0c63f9ae0a6b88cde8396f83d77289f6eff3ac013b7dde03d04',
+ 'value2': '0x1d6cb6e610e0359cf4291b6a441654ee3672c838202445e6a6e8f21d5548b6c4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000018b', 'value2': '0x00000316'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000002e', 'value2': '0x0000005c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x519539b48fdad683445121d8c341cbcae5fcf97910ba80bbd97891e9d5517fc4',
+ 'value2': '0x37e3a61ba6c4350fe32c2711e8511971352040639f693992ebbc7796ced19724'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x68a3a3cd9b891fd3144444c215a399355f2e626df7b409e99bd788ddd30d0e4d',
+ 'value2': '0x9ba1fb4b92beb8b237f2f0472a38cad6e4c53a43989de9b547cdb424fa71d70d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000013f', 'value2': '0x0000027e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f2', 'value2': '0x000003e4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3a26696d025f922b8eada2dd22388a10186b0f02e427565289a1d1736c79d2e4',
+ 'value2': '0x861bb92a2cee15600bd019780939c014e65871b035e80da71396a375f291ad24'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000084', 'value2': '0x00000108'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000143', 'value2': '0x00000286'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbcf3fbd7467d56575475e574314627a724ecb3c0c1af419dc05e9b8132938c64',
+ 'value2': '0xb18ef0b41e7a11f9900443c6d3375cc840a3bbbe7587fb3d616fdab3ce5255e4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8f3451aecb5b11132b0e45b559de98203fd181de76ac6dd7ebcf3e2a82bc8e33',
+ 'value2': '0xd96b6f97f03b7a0494fa284d0850bdf1d43e8fef7567002878cebc0e56d0cafe'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xffe19b3f1db3736741a5af91910939d8859f5774c97c2a14f8f38de864ccc2e1',
+ 'value2': '0xab690862d43ce6dc96b65a5deef941aba79f4b3cf9983844fc39c21cb7108898'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000114', 'value2': '0x00000228'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000001c', 'value2': '0x00000038'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2f90b802af1fd5c25ee58d22dc9fa83c04a075ef6d68326012a9da56e8be6094',
+ 'value2': '0x6a9b6bdb8a98a1254f023a2cbd58359072a842e6ced2ba9eae728b2f75eb997c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000181', 'value2': '0x00000302'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000013b', 'value2': '0x00000276'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2d5059f3212e4db5d46577b6b7f082868f97248639ac2ebe7b3e17c662a7a954',
+ 'value2': '0x7ca3c9b61b1f8aac85617e709f5bfcd1ac37c4e6138116e65901b1f9ca6abc54'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000178', 'value2': '0x000002f0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000fa', 'value2': '0x000001f4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000019d', 'value2': '0x0000033a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf8b7aea36c3ff04fce57b2d488c07f74ff230386c49666524283f98e1bc7bad4',
+ 'value2': '0x81baba633b06db44ff58affd477c93e71b4135f5a5f02e4d1f1709175b135fd4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3719bee48e5c189f314ceed0964840e45d5b77033b4d10179c108ee4d7e556d4',
+ 'value2': '0xb93958d2efbd9372dd5b87fb63b13d103283f5ee611e0bc068b1140e2ff8240e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x14e85ba033609d5d23299a31e2f61b5ddba4bc2b9e3d6cde0bf381a04945a439',
+ 'value2': '0xe2bd13a897f22fec6b25b3817e678ae217cc67e969a218c4de7705970efd5577'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3cab1de326a5b18ba9b349c794e44a5b65ee5da10a4ff3989fb396e354177551',
+ 'value2': '0x076bd4f0ebbca2d6ca0117ba1e7fdf4e7e9defc1f78a47cf402c18dd62e84230'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e4', 'value2': '0x000003c8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000075', 'value2': '0x000000ea'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4886118a5a2fb872be30036d3cbe8844d3752aa6714957c12473a9e1173871b4',
+ 'value2': '0xa163538110d462066e3c789e20de8470c873e83d72a96f364f9e3ae116b55f74'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000017f', 'value2': '0x000002fe'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000164', 'value2': '0x000002c8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x223965e507ecd782dbc007c0773517f27def6454a2d781d71317dda74f939274',
+ 'value2': '0x46afb4a0c3b527d6663907b684f758013cfa4ab84312b77e1901d6b1bda74974'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000011e', 'value2': '0x0000023c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x93ca9e750b65e4c4c2d41177fe1c9afdb07058ebd43e736a962ef40c56ddcd7d',
+ 'value2': '0xcff5b58c1261124f0d9b758728c5fda9a94b77f622860909cc24cfdf4867e3b4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x62757109ec72031b371cab6f842bf2f7df4aae9450e120920b0ba23ce7792919',
+ 'value2': '0xb57a03f84d750bd14e6163328baea3749d2828688a9e4508421807f762ee38d1'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7581144bce6f51a7c78cc4568fba11ff455ec83c09ffef5c3a06cb80a52c10e3',
+ 'value2': '0xbacf9e1b47a8bd565636308d230b14215be10e4e953251b67f6f2bc783770d4d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x47d357c9701078760c1ed62130a24caecf537a24c4fa962c53c2949a994b890e',
+ 'value2': '0x88babc7ff34c14b7441b89accd152b58cce39c0284fe3b7129b864f52fa6e70d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000007b', 'value2': '0x000000f6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001be', 'value2': '0x0000037c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb04ea80bb12b29cd75a1d4c87527a070d8d6dd67911d90ef45cafbbd003ea08c',
+ 'value2': '0xba5fb4b30e27119da0728251849c7737ca8efe0ce9d92254162fd0622c3bc58c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000a6', 'value2': '0x0000014c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000013a', 'value2': '0x00000274'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc22e7aa72e28bc7d1c877c1839bbfdf20b4a7b894a1159e33ce8f106bb43744c',
+ 'value2': '0xda5afdaa9accfaa6fb48d899978947ee90e59135b41d782686575a0aea39ba4c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000010f', 'value2': '0x0000021e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001c5', 'value2': '0x0000038a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xed318e066b9e29e6d699ebe21da349bb274003a501870231ce54eabfcd2275cc',
+ 'value2': '0x8f33da01a9ecf5e70f01ba783344243d8585769d29216ae2262f6d06d9163acc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa0657d0d6e7bf7a8be5fcdcd68fec71cdd2dc3ad6a8789ff37c68d6f61d788b6',
+ 'value2': '0xe9d88f06da584814adf599f4ea3eb58cde4380a772e1a82a7dae298b80239128'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x49ba1de7a2a65b490fa0ecd169e82081a9e1fbee335495ca1fb11b4175c73923',
+ 'value2': '0xd41c4efe22649f45d9b6aa7d9bef94734381dbad16eec20bf4b543a0ec1604e2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000045', 'value2': '0x0000008a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000064', 'value2': '0x000000c8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x455af0f739a96f3df5a824ff65741c83dc3623ca2f3ec5cb9929344e1bb0456c',
+ 'value2': '0xcb6cbae5b2e41b787b5fd79429dac7d6b5274ca63da3342de23be63166e3ecac'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000034', 'value2': '0x00000068'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001bc', 'value2': '0x00000378'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000183', 'value2': '0x00000306'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6c893d8c1d9841833181bc0de965f937368fea4721a5383021f6659fde8ebfec',
+ 'value2': '0xde82c44df00a026f7534002223dd375f346f168fba8907aadecf991d785eb56c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9694211b22d4637a87a5e4930c4a16ccb81bc97822071ab1b43684443d4c278c',
+ 'value2': '0x5be1b38d809da453428453e2afd892816f3cb5914670e5dcc1a6247a22c6afc5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xffb49fa515f8b69c0017e032716c2e9a10a4cddf081348530f667630fd5cf47c',
+ 'value2': '0x235859ec6d13776793606a526d62e4d30bc875c9b3b611859c9e9bd170c8871e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8736512f79acf630ab94d11186b6e6f446da86dfc9551a951fd617a5c0fa6238',
+ 'value2': '0xe3f1af55a45007b343d2a64106008b7d7ff8daa273ed4684796f2a1d50bc46c9'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000062', 'value2': '0x000000c4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000017d', 'value2': '0x000002fa'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6a5dcd78ea2ffeac57fb3209b28052a2b256ee446efbb2d3e40141b34c89a87c',
+ 'value2': '0x9bce2a8b244b39efc960564281d5a66b9c455d897f2f00dc8e77a92fa409489c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000131', 'value2': '0x00000262'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x90997c8129913bb464d082c8f6764a981dcebbfd034e33e07d900337f541ee7e',
+ 'value2': '0xcb8ecbe969c00b9c23dc80650f752e879a5d51aaec875491d0e15631c8c9431c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ec', 'value2': '0x000001d8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001d2', 'value2': '0x000003a4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5496a4bd2e3a1e15be1b93e86c65e674ffb200b90ff6bc968c50e590305b99bc',
+ 'value2': '0xcc2e9778552153fe01e16d2c0a7a761e5666294778282accc0fddbf92a92cf3c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000007f', 'value2': '0x000000fe'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc2c8c4b8c6084b6e3cf0cee4c3d4f2052de2f96a4970cac763914f304b03e266',
+ 'value2': '0xcb2a01507ac11ad13bed2038a2003269d256adf291036626bfeace4212b7223c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7e725ec1f161dcb55cdc2cca3b13edcf7c4629d7700ad708ad2a5de54a8249a7',
+ 'value2': '0xa7e3eb40f6b4f9e5c11886f66d02a268fe301b68e2e0b99b0a2e8e598fc7c07d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x316eee19968b87310bd812da2db0f77398cb3aa9fd073c41d1e87d9aa4903b10',
+ 'value2': '0xd01b8f9ba686b7537d37fd15384127835d5aec5f79d219fd343c0b011f4f7d39'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf256f0fe177af657d658478019ee7df54fd7ea5f51d57b387cb7afb1fc299893',
+ 'value2': '0x611c10f579e337906c7d8ded1303a6036f33963320dc51229b77564311729e6f'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdfcddafcde6532ee36ac8901ca8b09b0f301e284978c75108f45160d4958016b',
+ 'value2': '0x6cdb59c1f537674e4b027792a1daad6bdd701fd9ff0b7902d8d086f5fdfc5d89'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000004e', 'value2': '0x0000009c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000018f', 'value2': '0x0000031e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x19fcfd7d3bcc03576b9d3d001e358454ee15b53a8363e744964fa776623aac42',
+ 'value2': '0xae4092e1c65265706965d5fc4f440138c448a8211c774803856ac64dfad44c82'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000c6', 'value2': '0x0000018c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000105', 'value2': '0x0000020a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc63997ea21bdecbc8e960d2a61099bd11ed1ba5f0cc751d583d2a156c62bb302',
+ 'value2': '0xec65ca5d9fc26c1016d45b7a80a83e0d9b5f3532679c8e80bca4b3f9db536c82'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x75e9af0ffde5c97ca01180c355a597acd0a79be82f31a8d6369b4c4685d84ec3',
+ 'value2': '0x89e837e16f5bd5466fd61b3c96d8a9c513b5d8f285a1d9582001cdb57f06e636'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000031', 'value2': '0x00000062'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000194', 'value2': '0x00000328'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000108', 'value2': '0x00000210'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4ef60d929321af39ce473650561965b1f5f07a047bc0f75cd55a33962bf021e2',
+ 'value2': '0xd4c0816cea43a7155f2ef784cecfd610e934ddac2b95bb414194ae60f47b2962'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3e32dd69d529293e414eb91e976e4da0ba1dfd2476007534fa03a2f8760c5282',
+ 'value2': '0x62eccf1e76fb61af2cf510c637e46a7ea43fc3ba9f5323686802ab007de3c9d4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x60a8caf6be88c981d5e49989c22da169c698f263e2f5af4c8e5484a4993a00ff',
+ 'value2': '0xed36d0a60ddebe1ce5f31109ebc2b482560fb5b4f8d322a56e955a9456e19948'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000a8', 'value2': '0x00000150'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001c3', 'value2': '0x00000386'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x286cbf702dc97983acf25fcb5dc055ba88d943b54bf7c2d94b7aaca248609ad2',
+ 'value2': '0xecd38da7ed16577e053b08541293a759ad103f313db051077b669b96df195012'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ed', 'value2': '0x000003da'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000176', 'value2': '0x000002ec'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x10e54cf135f9783f50159083d3c45a5e48874e1207ae3fff5f36ffc24b253092',
+ 'value2': '0x9b2e10dd3680c65ec31247a9e527f65ea23f55ea40cd012b0daff1f9fabd7d92'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x203ef72acf8e2fbcfdb326a714951df0c1c4c19e4171fdf660fa9e8c1a7a942b',
+ 'value2': '0x3a24a2c5df8914db5ef5d1c7ec4f950981c38436acbef48905cdbf65050c492e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000079', 'value2': '0x000000f2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001c0', 'value2': '0x00000380'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000199', 'value2': '0x00000332'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x13799df33e74ffc6e7fa84695428f11a06c2cb1baed5c3cf2e6e1939307012d2',
+ 'value2': '0xcd7b9158f69435d1789d46eaf410181b351fe1fb9074de0da79b5169d468f8d2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x44fa380d08543b5861edb4bb79173659e7092d0a9c3586c734c126d27b119612',
+ 'value2': '0xbd53cc272bfc30f43d642ca43986145ca58be498869df85539281e0de15c542e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x42217225250af4cf37f4c8ab35ac8aa3cca79b65a62536997a9a9d10bf8f455f',
+ 'value2': '0x3670c44dc09129b79930b9d50708c53925ab2e64d96b4068a1765e2a16d1fd40'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000144', 'value2': '0x00000288'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000016e', 'value2': '0x000002dc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e2', 'value2': '0x000003c4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4288f1027dad60ee7865386f7b0730fbe681e7f17c43ee76d8adf42af3d98d32',
+ 'value2': '0xa8ae36feb01e97927a1325f2b2d33eb0ec71839a345598244ddab59606295332'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x06efbf3aa597572f4d03c5b733b49c83e11c2b0dd480eac44cb6da9b56aca832',
+ 'value2': '0x90f795f93a59eea33a9784bf8ba21295f0aeced3ef38e04e2107e1e4fdf08dc8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001c8', 'value2': '0x00000390'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000116', 'value2': '0x0000022c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e5', 'value2': '0x000003ca'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x03a9a4d30df30d743768a30050e91970f686e055e8cef96c74feee30b83753f2',
+ 'value2': '0xc43b58e0185f6fca7ed945b0513ae15aef0199b3eabed53da92e576569d0e5b2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6a7af443fc35fea79a79242a3f594485bb1e03d2f0ceef2b2d97b844410ab5b2',
+ 'value2': '0x761646cf8f1cd45a73dce7b2e76dc697ad58466c26ad7c1781b747f8a49b5b97'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1cdc2f9f383bd9f54428ea86f73c408ee578dc50286d0c1620d236f969d19b18',
+ 'value2': '0x73326c12176fd0a32270444d584665b1782dbdbcb5375f24b18f6e1b468e6170'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000193', 'value2': '0x00000326'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e7', 'value2': '0x000003ce'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb2f3351d6b2910d09c23d6c99b722564ceb89262deaf46b3281682f284d04872',
+ 'value2': '0xde67c90aec76c900d71243f9ea6a5e13832d3b1398261d95a325c53fa64489f2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x928c95816b0eb5d2d8552c62b77c6ca674cc73805d3824202bef2877c4be97db',
+ 'value2': '0x9fdce3c4e8abc642a75464a81b027d4dfec25ad573e34ab0edef9ca16a3bf4e8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x321e67bb14ef08059519cbe14a06d27acff880073c7d23ccb05b7c513b70e449',
+ 'value2': '0xc2150c2bc96472ec73b8a12ec63f387698b8fe60c2814aa437f83fe9d3f6e260'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2db0207caefa25007f6d0cd92295879cf05e609c3c1dcc69857d374d0d4c7a40',
+ 'value2': '0xa3cf9c571faa267ab7edfa2887a23a2c755614e2d3313fa2f7af0cf99090bd60'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000002a', 'value2': '0x00000054'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001bd', 'value2': '0x0000037a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b3', 'value2': '0x00000366'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x23900284be504168ae0c6f0d1ecb039dba91a58d2a444493c7d2e709058c298a',
+ 'value2': '0xcc90cb5764108380521ece4106c4a5b47dc2cefe300a8e9108c59c8b12f1fa0a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfd7d87672ec32a35bc5adbbc5434b196199edfe85537510bd3dd9a02e618342a',
+ 'value2': '0x43592994a88e9e9863ec494371c475afa406e832b6d6f290051d2d9c2e8f78b4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e3', 'value2': '0x000003c6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001cf', 'value2': '0x0000039e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1d02f7ac7257ca28c27f12bcbb460b838e7efef4de2061d185011c36e809034a',
+ 'value2': '0x340bcadc86799c73c6569cd7f690097faed6590df700607647d317deb7e2684a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000a9', 'value2': '0x00000152'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xaf318cf6823cc2000e6dbb9b8588c609c8931d1f711754ee89311b96c262d1fb',
+ 'value2': '0xc02c499f310b259a7e056a4a7639efca866fc5f86861254b5ee59c03b3fe160a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdaae6f6605ac625f9fc70a29c96e7799d80ff2e0351b9f2abe642178fde5335c',
+ 'value2': '0xfd2b8f08fdb4f0fe85763e7f786b63b986a43f2ff625d3f1cd050a264ede723b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ad', 'value2': '0x0000035a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001db', 'value2': '0x000003b6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3d562512e09559a74accad4a533caab15262bbc965824078cde4015e7707dd2a',
+ 'value2': '0xc97af3ac8bb88abc1d1d6a1d6c1f458e56c704a2ff71f15f4627c0112939592a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000100', 'value2': '0x00000200'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x694926b76a522e61451c5dec66aa89491850d13bf4f73c77b8e83e87fc71cccc',
+ 'value2': '0xeb304a63a61d9b365283b0accbde4bb7f7e384a3892143a2cca172fc0657142a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000a2', 'value2': '0x00000144'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000014c', 'value2': '0x00000298'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x83f5c5f455677c0a91e04496b8cca5289df8f440e23542839ed180fbae8adeea',
+ 'value2': '0xa29db8d343ada44078fb11f9d0f046672653f38c011b36a0bd687905817cc66a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xeb7a3964d6d5eac47c980980791ebbf86cb1f7748daef1b6c04e3fdc686d6f7f',
+ 'value2': '0x09366a74ce677e668964c07a9b07b9dca51354866f27909e33aa425366fc0919'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5064be65e222493dff684bde74f333a87de853d44bb1d0af1f70b1731d0e5b14',
+ 'value2': '0x8ed19a3d36d44f86e5a8646de7f6bd9dde63cb264cacd8a98ab6f963bb65e6c1'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000007e', 'value2': '0x000000fc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000fd', 'value2': '0x000001fa'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000165', 'value2': '0x000002ca'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa1a2d360880f3cf4eee72d87463a1b47bdcd1b3d2727f00df4f7a685a9abd11a',
+ 'value2': '0xf84cfd3d4f1a5465a382cba868c4e3ed281b2177c4ef3f47aab2d3d8d3cd66da'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x37fc0ed3afea10ce1ff0c9a18b7149a01b59ae5855b8e5c9d4d5c47e6974a31a',
+ 'value2': '0xef7c575d881f2946529640181581084539727b1b2e453d2f33e688bd1ed899eb'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000122', 'value2': '0x00000244'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e1', 'value2': '0x000003c2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2e006392e746baa91d62b8c961fd291dd7e2eece2d7c69ff0abe3ea139a12a3a',
+ 'value2': '0xa803b9ee069e90993a919f54f09c04a539e8528cbe353f3ca3818dc560dcbc3a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x746573745f6265666f7265', 'value2': '0x00000002'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f3', 'value2': '0x000003e6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xec55f381f480f925828b5aa136dc72f892698b841c0314f8133fa871b0fd973a',
+ 'value2': '0x885f2736b636c41ae71790c3d8a5d5dcde5b1ae52d83815d295ed67a6a549cba'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x613e4bb4dbf21110fe422587f1ab6a87beae6a745126d98979a5bd785cdfdd98',
+ 'value2': '0xc0ea2001ff4c67628606e3ca16e2f4ad117347c04b7dc5be398a19dc6d48ccad'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000118', 'value2': '0x00000230'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc6bc6ff531372895aa1c7d745035b78e48c9ae112e4add1c7cd5438969fd2927',
+ 'value2': '0xe468665b5ba90fd3f75ce0bb1e35812d3c5606bf21f17b291b1b66a23c6cefba'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x430c3ee670b86d9fad4c3a1ec2f1a448b5067847fe8d5adfe716540cedef12cf',
+ 'value2': '0x12c86134491d60bc5a80fc6d90e2af61dddb4f8282d12701922fe0d551e513d9'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5e900ef72587c57688a2044bee1e109542add4f55b65bedb245b7a7e8b376871',
+ 'value2': '0x885fd83ab780aad0c79f0effcde2309447684cec4c3fac730809b735ced7930b'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0fd4e2c850fb0822d47da56b767047d7f39ff7c3d40afe343f1120adae476fb9',
+ 'value2': '0xa4b00d90616afb5bdccfad6a3e3a0aac24444ebe5de8462a7cb95a9e71f5935e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000b8', 'value2': '0x00000170'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000170', 'value2': '0x000002e0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ce', 'value2': '0x0000039c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xda6c0f9734b52d76b9a0245bd7b4b9012ae76ceb2747b8488782e0dc1b6f5446',
+ 'value2': '0xba41828ae9782206f57c33f1c721414f016a9960d0e7b23011aa85edc625bd46'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b5', 'value2': '0x0000036a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6078cb0084ac68f0fccdf8e0991ab4b83e82e78a2ddebe0f375d2ccafed28150',
+ 'value2': '0xd244fb4f5639e800e2c4198820aded168272e3c3a9aa2eff2df5de04ce6a9546'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8a71fb1cac6f8f3a4b2cf9fd5e6fb117fa511ea5b79fb5d82231d85e37923f86',
+ 'value2': '0x5c783cb66e1861076b924e871957f7db372f1034573bda7986c82bebbe823ff6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000133', 'value2': '0x00000266'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001d9', 'value2': '0x000003b2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4e8b874a8b740d77e81387a2ece795382f3b26f1e66265a4af15c1a6da3da326',
+ 'value2': '0xbbaddf08c375766edc2eaac577961f2d1818c47a78a086c3e1c8691ea299e926'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000092', 'value2': '0x00000124'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4ead9aab38a13f9b8f58789d4b6e06aab4cccbf8bdf99855ea35d6034aa21207',
+ 'value2': '0x0e319d98d7e39679a298fa8a71cc9eb940566e9104099bf2853ad8f5a6326726'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000df', 'value2': '0x000001be'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf227509be35d932928fedfc61d6a98d6444446a94d5abc5413a9955d9be59497',
+ 'value2': '0xe7b0bea3fcf50ae9e8bd8e8ba93f119f241206c3fe6a7673647b6038630241e6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x18c88b00fac936d45fbc5f6420ee1806c1f97cfa141e31e6f275313d7935ba81',
+ 'value2': '0x1b24045ddf5ff6c07947f1a82127dbd0a49297466114afe6cb7e14b7d298788d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e6', 'value2': '0x000003cc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000126', 'value2': '0x0000024c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6d7e95b0d3c2d07cfce3df607f561d557d4aeda8620408cce4c56552cc3f9716',
+ 'value2': '0x3ac3185e6e231f7afd154c25568063bb6f4947b6637f1d490489d83db7d7fcd6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000157', 'value2': '0x000002ae'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000117', 'value2': '0x0000022e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4e4f0f094a348a905740df68541355d471fe33960a932d16347e8423df78bcd6',
+ 'value2': '0xfd86a0070e921baf68c5d53bf1ede96f2cfeecdb3d232c2b515cb944c5c6a1d6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe60dd9f50c48638ae8de835bb30922e248490a54fa4bd7163a389d1846adcd50',
+ 'value2': '0x83c98e957d95f282cd7bf7fae5013a1887de8d58de1c27196e10fc356cf30865'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000141', 'value2': '0x00000282'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001d6', 'value2': '0x000003ac'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1d4e937565b952f589a8b6ceb6939142e44c721bd3bd8b64408279e6e23edf36',
+ 'value2': '0xbdda11f060fffd6ef6b1b0c29a6f5b4786a28ebe65dc215f01a519cdd9ffdc36'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000130', 'value2': '0x00000260'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000156', 'value2': '0x000002ac'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x151359010a7af00d99593fb5af3ec071255712ed597fd08431db9ddfe13613b6',
+ 'value2': '0xd55cbda2c89be77390293f7764cfeae94d8c084f3a1933c35df4345f7c521f36'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9b3169d729945c6b9964ae1e77516a1c10214bc040037d882786f107236d2f2e',
+ 'value2': '0xf8adbe62f2d8e76b958894b986746c762231bd37b387b3c794290971e26ab9e6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000d0', 'value2': '0x000001a0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000019c', 'value2': '0x00000338'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6bfaabb2afc1a8652825495532f7e4a1e29247225fec11420c0716276a088b36',
+ 'value2': '0xb558d4a2ce16eb321d0029126c1bbc8b398e5ca11509b3d4e51fdd0b4d4438b6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd73f782bf3b6b00d597da7c742d7dfbfc1b694aa41594ec30df4c5aa3822a5ba',
+ 'value2': '0x204c4285d8603b2434f131800cd00e7b819cc1ab33121ca977e07fe838c277de'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000138', 'value2': '0x00000270'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001d5', 'value2': '0x000003aa'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7cf115adc7a3924cb1bead067b65abef2d290a1077745c4c38656cfbfa7ff176',
+ 'value2': '0xe284e5ca011e6413ba2db81642d8894ff2b412896bde6b59b1eb2d175fadea76'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000096', 'value2': '0x0000012c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf4a7597c222643f7cd4fdfcb2e9b12ed78d00bcaf90131b72ebf47cf924c78e7',
+ 'value2': '0x9dce2dde77e4340c826d87d22ff20d71c8324b16665c4a62b6dccf6026d95376'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc42bcfd7e3457e8f88ea86ce6b52f3ea8f2d3a624054c17ff00897c61ef61bd9',
+ 'value2': '0xbf2847a8a136eeb79e69fc0cda213830047ec7377026f519808d8171a672568d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa6ee45cc23783266f64a97f087f02f447ce3a1ae7dc4f3ae990f5c08f2b7de6c',
+ 'value2': '0x0707ba23a980e1d9e77688a15814e7abee6e717eb13c0f622eb80f847a9780c5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1bce15ce0d734662e68bed4cc82c536384c8bd61cfe0a288cf73b6748b9314b4',
+ 'value2': '0x2554c148998ed1736ed743a0c6cbba4b376004a49d39a74c789b5917923878d8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000022', 'value2': '0x00000044'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000016c', 'value2': '0x000002d8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x47890c0579969d5361707767d650b07734c9ec1ae0ab696b47b47f35f97bfb3e',
+ 'value2': '0xd1824d7ee8da4bee50dfd415d9df5319c319807eb79461b926077baa6e334c4e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ae', 'value2': '0x0000015c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x14393f4c2f550e71f97713eb3a79126866589a3e92ad05e88ea1e39e2bf9e9ea',
+ 'value2': '0xf9f27ac0eaa25b96dc0640f4109c80ec4b849ef85ac5cc4c5f182a150a943b6e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000074', 'value2': '0x000000e8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000fe', 'value2': '0x000001fc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7d214619db3017a4339d40189a51172034e7cf4b582ffb9ab9aa12f8f813603e',
+ 'value2': '0x89af8e030aef793029d9989abbdd9a67db5cfdc459defee703c8a0229d81859e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000d6', 'value2': '0x000001ac'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000192', 'value2': '0x00000324'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x64522363a2d21a5626ce00cc3bd6d03a9b5f736c0db3a57774b2acd5a0f9ad5e',
+ 'value2': '0xcb3b00d8717f186671ec101393f20c6eb00b9cae0a910e141aea8ca825b4cd5e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000c0', 'value2': '0x00000180'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7a8aa84c6f59e78f333c3fd6b7aff0897066c4ebbf5a88a73c3457ed6133ba51',
+ 'value2': '0x9c41d5956e4f408437b670bcd9a40195cd769ea2567197f7612cc43f7a582f5e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x457201170b6c9b21cd5d0984b8a94d466054a51e2b67bf471ef7f02958ed056b',
+ 'value2': '0xfe598d3638d8177f529337ab78dfe78a49fc03b16576a95b6d2e7633339cec9b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000142', 'value2': '0x00000284'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001cc', 'value2': '0x00000398'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0c0900ffe9ccc375a9df2f02ecdbc1c9a29dd91992c3df838aff0169cf7060be',
+ 'value2': '0x99aae20449a410f324dc57621c631009a4baa48e64dd51eb04392e78698a093e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000de', 'value2': '0x000001bc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbe2bb400f3a74d429effa87da05453ff937d8c7962343ad1e9f7d359bd072796',
+ 'value2': '0x9480815c3e8c6ae74ae9ce2ca553677020ace561162f8919acfc411d1ce66f3e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a3', 'value2': '0x00000346'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000018e', 'value2': '0x0000031c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7bad55b81eedccb9f5cc55fdd89f6a295fe8141bbb389fc946e5a0f2ad2ab97e',
+ 'value2': '0x1cce1a402b35e6e13d7769964117c8b2e8a2cd1fe9c7a9d9a9d6e1dc458f8b7e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000014f', 'value2': '0x0000029e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcffa0e64215ec033676df66e91a173c7e156dcceb1a97d2903e9a68009ae0e19',
+ 'value2': '0xbc70108876176c94a2460a87d202ec2d76e8a9310eb257d26dd56f65a3e7c6fe'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x91282f404e5f686172458fde8bdb11233875e137e436949ae7d3c9128f7824b9',
+ 'value2': '0x70807da490ba7317999ce9be7bd11667b5055aae24c21ef9a4cfa4cf0a30809b'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd37cb3158943f3d0662b5209004917ef3ea5481a54b8fdcf2ff98fba2245df5f',
+ 'value2': '0x8601439759e59138af43900510b03d409b76298c8198eae484cb99ca422b47aa'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x10d314b653133722efb1898264f06c692f01dbbd542fc5c0e2a6ab216105da41',
+ 'value2': '0x389501e769d17ead0962e5de253b2be1bee0cc68b539ffe0b384b9616aecb378'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7ecc11835c4ac61124e5b2a3e53f2d570e333db55198ed732ce49ee7b904e535',
+ 'value2': '0x970219fa3c94d0ee38428a166aa73f4bb4cde0b6860f56df0c132c01a246df97'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa6e28926cbea3e5ab94baae8a9dc2253192009df60b3828712114c5b89f4f099',
+ 'value2': '0xab058c6538695845586a8fbf10ecd59b413eccce8c0f4ea5d4deca79f75a818c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcc1f7248874415e2d4f03739210d7e678416c3ca2ab294b8040f06800749310f',
+ 'value2': '0x718eb7f869ee08ca12780849dd02bf481a5fc6a14614e9f14eb127f78792c7c6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000004c', 'value2': '0x00000098'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001dd', 'value2': '0x000003ba'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6e4303b9740904f6a3d6ed5ce3b46c18f0d29b611a097f81c59ec5fc45c6a6e1',
+ 'value2': '0xb24fe3c2f03ad48083a91bf9822ba549a5ebe174ef58c81e5bee5913c5366181'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ee', 'value2': '0x000001dc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ee', 'value2': '0x000003dc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4438268b8e03bae9e0a0929085941816d65d8db6692c7fc166c82509216be141',
+ 'value2': '0xcf2d1318b034c983afed6f4dfc21f9f045db531f045462361c6379b47e45e441'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000e3', 'value2': '0x000001c6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb35815d31f35fae1d1de39a2de035a699f9026cc35a9dce9bca18f2a6e83f0a4',
+ 'value2': '0xdcd1dd95a7a0206a08c7245b8c3e57d9f98aa1a79e47eb6d6f870041316a1381'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x032a7088f8903075b49e3817c73557e14a0cf2c3f3049d9a970553f757f09bbf',
+ 'value2': '0x37fc78d4776958a9552b3eb1f71f8970f6a22673bdd60ec45c1b442afefbadf5'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000010c', 'value2': '0x00000218'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000011b', 'value2': '0x00000236'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000cf', 'value2': '0x0000019e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3ed6da714a7e72139a749467493da9002802c453d6822d5a52b9fd140d0de461',
+ 'value2': '0xce597d9519ab90222bbba19f4ddff81bc78e0a360c72d55b8958f5125d96c6e1'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x07fc14cbf02a13902f13b680bcc946377d27e77b8e29b4809891539c630192a1',
+ 'value2': '0xba24a572c0f9bc95af240605ec8e49188f79961f7fe7c732918a2ccddce56205'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5858a00d3fa2a5971031e712d201a975a2d1b2188c5abb99ff970182d2eeb247',
+ 'value2': '0x5d9f546e6a64628359f71aae507cbc6a2016b6ca79eef5f3da2d305408a3cbf7'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000146', 'value2': '0x0000028c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000016b', 'value2': '0x000002d6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000c7', 'value2': '0x0000018e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x54571e89d3661cefe26ae39e856091ed5e35f982f6b7518b546a90e142260511',
+ 'value2': '0x4a480d3e6bbd0cba9d1df761c4a6ee6d6689512d25cf8a65b1069f761de47491'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x15690b00ca7320009a7b16a302f25654a98ef637007e4fd6c3459b20572b8811',
+ 'value2': '0x51af4e981f67467a5b090c0592a2ebdfc1516c989bc4202cc93afff158250bdc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000037', 'value2': '0x0000006e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbce95ab5d6b743b90a3669493a07e1e79f0fca0ebd799760bdcffbfc52f49744',
+ 'value2': '0x92aa533209347fc1537dbf09858150c3993f3bc7008554dc4376ab90cd40ced1'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000b0', 'value2': '0x00000160'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x449548ff41fc47b9840eb316eaeddf1bbdfa8be7e31c714ffd98b365dca74b0e',
+ 'value2': '0x0804c0049442d37b8264d8f5fb036c24bfd30f558a6c415f0ca131653c3c9bd1'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000072', 'value2': '0x000000e4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000b2', 'value2': '0x00000164'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b0', 'value2': '0x00000360'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x765d966338112206b057aa63d00b908f61729d742e621a3191223e1bc0a791f1',
+ 'value2': '0xea2c51eb1005d25cfa2adeeda697af780f0462ed3500235510008f50d16b1871'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x95c3e985f495928146eb251fc24580587d5e6dc84fc20e241f16cca4fe759e71',
+ 'value2': '0x8eded0d44088219ffb6b9d966c0d8df58cf05abacf7b2c71b67e13bcec0ed8b2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbb4345bc1c192df897bd3bbbc6ddf12231ef1dea8a84ae5b0c98f9398ec385b0',
+ 'value2': '0x57dbb3067d8cdb48a6c4f314e7c834af5cdd463ecf6e05ca323fbbfee8e7b511'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8dc1fc4be79770dd8142f36b5ffc871fb8fa8aa641340bcf2f474efb4cf67746',
+ 'value2': '0x7a056c0e479d4dad215e3f0e08270408a429839f60a73c1d6ca895dc73e9b27c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ea', 'value2': '0x000003d4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000011f', 'value2': '0x0000023e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6dde167c953eedafbb32221969e10e235031a96aa05bf332fd8566948f5ba809',
+ 'value2': '0x71f644036a1ac92f97ad3bc36297536a803c25d5b7aeaab3d4dd609de436d689'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b8', 'value2': '0x00000370'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x72644d99545d4f61d95275ba9cf77fcb30b6f8706eac4d13c37b7912997f24f9',
+ 'value2': '0xb3ebfed95066451ea40faad77e9afbaf924bf669dae6b6c0bd58c7aedb7dd809'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ac', 'value2': '0x00000358'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001e0', 'value2': '0x000003c0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x756e7d60d00676a33c503499c1c011371f9d0b7fcdcf809460263a2fa600cd89',
+ 'value2': '0x47b647156ccc45b4192c1510d0df43cdfafec451ffc02513092e64f53a74f189'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9180555af835e8eb136c059a5062d1d4b9ef39586501e4f924bd096376311535',
+ 'value2': '0xc44c4c75001624994a00ba8638ce0a159965344de8f109f387931809615c88f7'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000078', 'value2': '0x000000f0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x13e11a01d3addb674de227af21af70bbdc77ed028021d6c10709c3678998a96e',
+ 'value2': '0x32ae907da58c808f8dafcd60269052bcec216806730329b9f5fc77affd05b489'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000127', 'value2': '0x0000024e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000082', 'value2': '0x00000104'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ba', 'value2': '0x00000374'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x00182f88831367a736c59210deb69be74f4b7d262d84df84dbf4ed66c15649e9',
+ 'value2': '0xc795d13e3d73fec72594c1f2662b7f438927116d215282e64d02a6be532be4a9'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x013e5fc7b4f1ad5a7e226c0612a50780fd91ce186698cffbc634449370d6cd29',
+ 'value2': '0x7ceb166cf0b3d80f1d43d2b1bc8f246d9c905764b3c0914ba7208c7b4a922615'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000027', 'value2': '0x0000004e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ec', 'value2': '0x000003d8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000198', 'value2': '0x00000330'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7c456afd63691f224c1542206a1d978f06ccefebf7cc37fc1a2543e8e8d5f5e9',
+ 'value2': '0xc1ddb3933bb17d9242e24ad644d70a58eaa6cd64334efcae74be4d0358a2ba69'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2d1de716ade6e75c2b303fb355ea64883e32fb13f08e4d1916654f917dc03b89',
+ 'value2': '0xedba9499a9e49804258b9c375cb61a027b3b508cd5c4478f96d5f7a8c59199f3'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcf6ab8b2adbff35b08a4ad4c83053319d0969e08eaa0a68833914efe88a0929e',
+ 'value2': '0xfa5cfa3f71dd811a452872920a4a50390cef9cb46353ee31be0a42a5f62fc424'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd0b299fb240e861e19e4a591710f3e33878d13f106b17087931abbf74a433999',
+ 'value2': '0x854701e05f90338623f5805591f3504ee9fa6e567ff91d5b32c87cc12019b9b2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000018', 'value2': '0x00000030'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000012c', 'value2': '0x00000258'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000e7', 'value2': '0x000001ce'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7ac07b76d945b834cce3ebe8ed9eb2f09939c99bd8096b6b48dab0d472b757d9',
+ 'value2': '0xf9ce4ec301a66116276e5c7d7ccb8c8974fbacd76b1f90399c6063c821422d59'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa718d898d1574f5b21a8c1429068ddf2c4e0ca9745d96715011893a806e45a11',
+ 'value2': '0x09f7d70ee8265705fb853594e5fc07a71e90dd8076563f9a30cda2aebd87f9f6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000070', 'value2': '0x000000e0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001de', 'value2': '0x000003bc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2343436ea209ca648a093b9d2bbfcc1408adb41fe5d305043a5353ff510d1739',
+ 'value2': '0x84da37a6c36e8f6ef79969b2c2a797cbfc5efdc7d59c766f4107333246004439'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000015f', 'value2': '0x000002be'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe2e3ad6cbc366efd9021171576c3daca67b17708c327e6f53e6daddc87958cb0',
+ 'value2': '0x9821bda456b9acc0c87eb8b99e773d42aa415095b10e7e3482ed09538b9c2f39'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000c8', 'value2': '0x00000190'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcac3fe32de673514da8835e07ab7b2a90bc9be5c9448a3b72ba8f6458b6a4b69',
+ 'value2': '0xd03b3516f92ccc3b126327f2d4a9535811f015c555d0e83d829e25539f81d239'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000123', 'value2': '0x00000246'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000019b', 'value2': '0x00000336'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001cb', 'value2': '0x00000396'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ae', 'value2': '0x0000035c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6efa9b70cac8d83145ba5fae806b2b787251843422d6aa757ef54394ea4149f9',
+ 'value2': '0x65ff5f5af1375353a8f9439eff450d4e0d589b0cf49d9adb36a1671c2aa451f9'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ad', 'value2': '0x0000015a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x51481e4925053e6e0854af98e3c2990b6e213e69f9f1fb984932004ada8cdcfe',
+ 'value2': '0x8e4d6a8bbf9d68a2f5bfe732221aa1f558741348cb22f746cff3de92fa46d639'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x647f2e624035618f2b2af8b61f2c04856b5a05e8f6511aa1ae29fee5d527dff9',
+ 'value2': '0x1cc956a59bae0e144618ebd1bc2b64f2343898762acc88e11eeb60623c608598'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5add22f3c6ea9d3c8b667bff40017b2896479bb0a24291678fa50280af5e7c79',
+ 'value2': '0x0694c99aa46e1b1eba6fd18683e5c767f370bc451fc357d08430d5d680d817b0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfa698e3a9baa97d6abc8f6843bd3b1d8b9fa18343ecbc0aa11b8f6886ca3fae5',
+ 'value2': '0x14973e5f08af7a4eebe859e5510d06b6cddb561fc7ca92c9db320110aeed0386'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xeae872c6174304509a07b21d64d12c8328d231a54433eb53be618138d264ac83',
+ 'value2': '0x7bba797313eff6926ccc7864d33370eeea15d510718705230614fe2a18f7d25b'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfa6a7000ed178c7e9946301aec33f220a82c6be585a42f3dd0aba07ee8b45da0',
+ 'value2': '0x0f37ae74dd7d678c41529a8bdbec78af289879e509d595b671fc89b19c4582d5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd2536f4928b4a0f80a41bc85ae937e3f674ef17829c42510786af6dce86acd5d',
+ 'value2': '0xea6b7d206aa52e92b74d42c7e49292f7b0ed23481a7afcd7fbdeb81ccaa04586'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a0', 'value2': '0x00000340'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000042', 'value2': '0x00000084'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5d56040bd6865a32a8b1740cadf9b87cc37495a3de33a07d0921e3659d392d45',
+ 'value2': '0xd266e912df64eb2080ad692ae50693c6ee1876a601fd3e71f944ea129d56cd25'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000e6', 'value2': '0x000001cc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000011c', 'value2': '0x00000238'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x92ec87d68c8d3e6df245e482dc7d58e051dff803192ae0e5c382db771f208585',
+ 'value2': '0xf92a7da390678a5793e24fc88eecd7add16c385889ad5868d647f4388804cc25'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000fb', 'value2': '0x000001f6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe19d2ca4799b5478126f602f09a8f79c2603d2cc05beab749caad9ba525b19f6',
+ 'value2': '0xb27aef0f91e276e4ce0f2ded4b6459bcb5ed35bcdbb8d75123bbabdf4f538d25'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x30f1a9431aacc9045ed95f2b8bef6efb7450b8d6994eada8108dd62c6397a686',
+ 'value2': '0x593a2338dda5e129b1ee64e7c2b60fdf9f821f67dff8d72a26fd21bbfd568a6e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001bf', 'value2': '0x0000037e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001eb', 'value2': '0x000003d6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000019f', 'value2': '0x0000033e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x314967f407e7374933c3550a12614889877f77da593834115046ecad2d997b15',
+ 'value2': '0x679da1b1de1f95641afc6c01d8be029326edcf3be024dbc631cd48c2474dd355'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4d318edce53c0bf9878fdd15c94edb7eca6f8a3ba8b20f0c6bf3525d599bfc15',
+ 'value2': '0xc377f3e31a703854719ad606ea9c8e212341397875eb4b907c494d6aa4b5294b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a6', 'value2': '0x0000034c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfc34b6f91e5194a34a11350a5b27702bcec752c0185b401c61064d85aa7b643d',
+ 'value2': '0xeca5392139195c38c481912cbc9188b9a16f34f795bfc48896271d3e7f7ffa95'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000102', 'value2': '0x00000204'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0c43654aa259c3d447fe08343bfdd3b786c00fdae50e518a33c19f1bf39baee2',
+ 'value2': '0xe48acfa4f2c6fcc7e9ad8c9c39ad0b2905986bffcd54c6fc46de48489274b595'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000175', 'value2': '0x000002ea'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000c5', 'value2': '0x0000018a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a9', 'value2': '0x00000352'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xee6cb4854d314a2828e065c305d21670655feaa567c1819b347f59f845108c15',
+ 'value2': '0xa0fc531497c6e7a97abe7ea35dbaf1cc1ae84435e7a97d229b18189fe07f37f5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7fc506c22663bb5751a530db6b83a0191e3494fd079af87848a4fe65f53b4bb5',
+ 'value2': '0x0462fba62db98f085b4b1adca26d1cecd9f36a521ff83a86ffe2293c53dbbac8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdb13ccfd9c234f0bf9c4f6fe749cb9cd60e9035b10e3d61c47f63734d7525f4e',
+ 'value2': '0x353326db69804373862ea05ace73d944793078d78a8d45c121b67601a1606d96'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbab218ad6d2ea14283cb95cd06fdbdfd3926910c02b9d8ecade6f81d9eb0f123',
+ 'value2': '0x72606758a7dba55a81e68d75a1f8415009d80c1d3ee5d075feb02556afa40b90'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000152', 'value2': '0x000002a4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000013e', 'value2': '0x0000027c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x358fe8c798e73cfeca8b61b465858025bf86f952c7edcd764bfd12710309360d',
+ 'value2': '0x12b2409fc2c59f04f55f0c225f1d9fe0a7fa992701f42525d1197b88023cd60d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000179', 'value2': '0x000002f2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000012f', 'value2': '0x0000025e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2364bccfa14270e60fdee7de8a7d5a716d8dc01308ca6a93c2ef57b5c276ef0d',
+ 'value2': '0x7beefa60b138a33987fcd5b0856c86423c31d0d68efecdd85675a22ad5fd500d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x693980d6b2e6c61ab03a84378dbb963efa4eac16549d02f151edc42d7770c482',
+ 'value2': '0x86a19624938833ddb11e0e63ee93ef65e5e72d25e75161ea4b0490d80d6ff72c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000f8', 'value2': '0x000001f0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5b92a13c3b683a262a2918869569e75ec54935bf20c2796662c993e323c6c3bd',
+ 'value2': '0x4cfc298d5eb794086ed12d08b237f96d74bea040b1f19ee3eb84f5a0f3791a0d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000189', 'value2': '0x00000312'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000006d', 'value2': '0x000000da'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4baf77baf22d1dbffa96693668dc99fc4400facea7d845872a3b939b8c60184d',
+ 'value2': '0x127196bfbacb901ce49dc8a525067475abe787220c05fecbc4ec66d1d1c5f49d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000153', 'value2': '0x000002a6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6ee344127bb305caf87a042af013633a64b735ce898a33880e4b8989efcc301d',
+ 'value2': '0xab57c68f4d650684040bfaf0558e8b108c0b154ffaaf13434bb1409b919a60cd'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbe7bbe1b925f675080a182813b59588a772ab2373a9f798de0e9ec7ad40b6663',
+ 'value2': '0xcd59e4c55c9eab05afa4011355a9619cda38b9166ef802c099ad8d39d4a75a6e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000014b', 'value2': '0x00000296'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ef', 'value2': '0x000001de'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000154', 'value2': '0x000002a8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb5d6d4657989cdee7f56e12fc7c2bbe3b02020f3145df676878b229eb091f24d',
+ 'value2': '0xf3171564ff5cedac6c18a6a2eccc1dc32f01283a6539f2af27816761a7ea306d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x170464bd9cc395cb53d0efa26afea09b41ac285bd3d9ff86650d7f3ef4ac062d',
+ 'value2': '0xfb5da2784bd1a8ca0685be53f1552830310ebfdcca092f07417bc04d912dc369'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa8ce25f13786d127d9d1ace1e7070c51a5c19c244f72aeff0018e0fdc34f8b75',
+ 'value2': '0xae0cfbc0aaf3cbc86d0b7cce0e8f09594b791e0c5a3dab1f724d4ad6c1f484d3'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000018d', 'value2': '0x0000031a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000019e', 'value2': '0x0000033c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x637c8f1a8f22762fe72bd1fdf12f946df4a5a9a590eb069fd7cf7159ec62979d',
+ 'value2': '0x9041c8ac690a216ec6edda0b4369e2d9ddc228d43d1ff8157797dbb577f3f01d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000f3', 'value2': '0x000001e6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5a4a1bd2675f383942b7d8037b93797b3fbf5de46cc8ab527c3112ebd44a43ee',
+ 'value2': '0x6fae69b29ce032d2a0c4065a87d4026a3a8ce87ca9eea92e71b038276896d05d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000000b', 'value2': '0x00000016'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000185', 'value2': '0x0000030a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x852be0383b6dc273d7c726add11d7a192470fabe3095df79f5767de81e3a8cd1',
+ 'value2': '0x915d5e1bd25afc67218727ba1f3c92bf7a7a17c1efbb4d6fad279178877f10dd'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5abbf6f40685cc96823f3793b75b7f4440f6028537b29981eabc600b131c2ac5',
+ 'value2': '0xfa205e026f35a2de721f2af8a0fda7d962513c79a906d1593a9019a390e88b59'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000bf', 'value2': '0x0000017e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b9', 'value2': '0x00000372'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcc8daf7fe4e870b56bc9ed9b7ee5d82176493ba609b3ee69fccf7f182f5da65d',
+ 'value2': '0xb934c4687431268a2e15895bfbd4ea8dbf43bb0bfd6ab1cbaf81a1429c6136bd'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf320b24e072a23ffa2963da1d1b8879402590de9072fee6992d7b54a00779c4c',
+ 'value2': '0xa2baff6911bbdb7c9bacbf5b5637f604e0f624d3d4f15ad8d4057e4de6e478fb'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4c585d1d6796d65f400885b8831d4e034d295afb56badb1ece589c26f88c1e59',
+ 'value2': '0x99a718a8859a771b600d867925b362b06539dfa8fb21b91bbfd9d02f58d8a821'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x77b0d4eedc23745e286c7430d902763ab6de2bd181d6a6b4444d7920c099a1fd',
+ 'value2': '0xe1627cfbe2b211ffada7b22c3a2a44d6a1e9787474f010a8d13cc2168ba93381'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe04a7de16b685b4481f5be78219944979156839c6b091f080980c84f57476c9c',
+ 'value2': '0x6fa8d9f4fd38936f7163bce1a2c653a3c3c369bfcb349658e3060cd26eaa56df'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000023', 'value2': '0x00000046'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ba', 'value2': '0x00000174'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001c2', 'value2': '0x00000384'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb1e07e15d6ecf4306997ad3ea16347de3ffeec09e1e0b978529cc6517703c683',
+ 'value2': '0xc4a0752f3f27811185953be68430f9511c64d2b5913d12ab66d50e472d345083'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000125', 'value2': '0x0000024a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd0772d88aaef4aa570de69134918354707bea231352683546c8fc3f5fffbdb87',
+ 'value2': '0xc6683359ecbf99240091c6e4511e97997bdbc1042e4b7e4146a0e35bc0b91083'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x659fa4b7dd85d237b30936de27a4deaffae782d6ef6fce68c57d90c9a0bd4e63',
+ 'value2': '0xcb5d215e6ef7e4eb5ed99fc2a98bf2dd0c47871252e3db247f712d0433b82c80'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001c9', 'value2': '0x00000392'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000f0', 'value2': '0x000001e0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6be6de799ea6c4407eec70a1fd4afc5d0bf65727f515b0f0ad2e8f98130e4d43',
+ 'value2': '0xc44bda95adbf2fa0a07bbbb0aad6131911e20593e9d9baacdc3ce7162bc51ac3'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000015c', 'value2': '0x000002b8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x50b10b368cb373c7d7a33f220b31fd263af74c8052eabb8afdbdfafee0e7ba4b',
+ 'value2': '0xa088cb5ad6b349262d28e68bb408998c6065e9f7a94dfe7227abb82c20712c43'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x11e72740a9e126dc1f106dce0fec413d278caa444d11cb24d7e5b9840b093c41',
+ 'value2': '0x78ba6966788b929da508d9ba757ccf38b4883cb5e58582f3b0b79cdffb07681a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000001b', 'value2': '0x00000036'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000136', 'value2': '0x0000026c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000f2', 'value2': '0x000001e4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000174', 'value2': '0x000002e8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd412faddd9e1f19b10efed97695222a3c205b720532eee026e0524de716223a3',
+ 'value2': '0xb16207a803f83ee050cfa093480b0396bf58fd3e986b7a9f09a04a0725a7e0e3'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x234aa43437e7faa383cf154514dd226e3fd2499c70cbfbeb86f751e6614c3b63',
+ 'value2': '0x64115338f284cf1daa141d43ce8c30576c82f57aa501e1fed7d4fdc4e585e67d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x64c393165ac53d4d7a6af6a98bc4174d7bbf3fcd0ccd9449ffa7f35e4bf49d03',
+ 'value2': '0xae2281ea92ecaa281e0131c0e638443f6bcba88fa734a08175d1ada4b562e6ea'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5401ef3cf6d11c3137a4af148028b7f288cb78b69414e5900eb20d48cdc26bb9',
+ 'value2': '0x894992860c22651542638417f32cbee093b88739b2a3bb7dcf2912bb57e31f23'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000010e', 'value2': '0x0000021c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ef', 'value2': '0x000003de'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x83dab5c4d36f4536725760153701c96d58079551ae36366be1367b71d63c8513',
+ 'value2': '0xe13229d1102dd831585b69f1f0393a365942d2dac251af1a19eed96df4679b13'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000b9', 'value2': '0x00000172'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001c7', 'value2': '0x0000038e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000018a', 'value2': '0x00000314'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3450bb5a55b04f79e9ba682ae1015b52dd327d65e95d90575cbeba98dbc15bd3',
+ 'value2': '0xeea8d83f0b9a08622aaa29b7f7c6beefec07032801df9d4ad5189bd1ed4216d3'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x955dd351c61bba92027ce12a95e2197d932962225264777093c9dd4c46c14913',
+ 'value2': '0xc9ba11f2790d7178aeb6c3dd9599924ac83906c606b6652995ae8f1ecc14c39c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf9a45c12883e87321a18e5e826d003fc2d9d48fb48116cb62377fbd9da0784ef',
+ 'value2': '0x32e37d8edf206a8d4b4ec6878aaa811e0661024263c424891b9c7001990db4f9'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000088', 'value2': '0x00000110'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001d0', 'value2': '0x000003a0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4e875aef9b95d2d4b42238750797946fde6d1e2946e012bb550d69b4e76ed273',
+ 'value2': '0xf6b04a9c123bfc7c1f45517ca6b44b2453e50c63055a2710846b2f01c8113c33'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000006b', 'value2': '0x000000d6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000f4', 'value2': '0x000001e8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb4dfe824f03174396606ffd8894e996d6a3f676da45370f267d5257b37dbdb33',
+ 'value2': '0xf776d8d4402b639757fc4a52f0900095024cb6debecb7fd4cc5eea3461ed24f3'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1298bad547ae87f961fb510165bdb1b64d61a422a9a751f534262b3d8398e5f7',
+ 'value2': '0x48d8bb3ef31e2e9d5a6627e856eaec223ec51f1a024d8f7a059e4eea6ceed7e0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9a0446dd0d448016223c986d15973482ed1e82963cdeb0220834d3e202515cf7',
+ 'value2': '0x356c0b76ff61084bd69a3edd3c349670df8f192f41ee7061239bdb164f8d9ca5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x234d25a43d7af5eb533a71237ac2035bf81312a9fd2d48d2737bd751bcce48d9',
+ 'value2': '0x3fbb3eae4d2405b0c5e94afb916908d522114d49421e37bf310e08019d6c9166'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000161', 'value2': '0x000002c2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000013c', 'value2': '0x00000278'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x28fd0edc84d08d3dfbcc028f1f8b75de48d68fa516824e6bcfa5800a0d0f778b',
+ 'value2': '0x2696fba6a75d7afd0c3dee82dfb028d95e56e401ff69ea6c1d4bffc75281684b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001bb', 'value2': '0x00000376'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000196', 'value2': '0x0000032c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x602c3f50653686fa85593081d7c3ebafb1da72c46dce4166d372adba129bd44b',
+ 'value2': '0x07075dd39acd04c75ec1be5575cc0de9ecb28ebff6ce30a0b1ff02aa8d6ced4b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000145', 'value2': '0x0000028a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x99a9be6afa42712e67eb12a512369601d55b0ac9ffae197e3a2346d91abad350',
+ 'value2': '0x530ff81faaf979b851eb3d8e96d822592c1131b806a2e93c10ae00d8a0b4014b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000014e', 'value2': '0x0000029c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000011', 'value2': '0x00000022'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x691c96dc144d4d8f0ea960fd41cc15560f82724f904370ca7c55325c52f37ecb',
+ 'value2': '0x7c41103172598183172e69fa3bc5d157184c3c2026a462a38b7e319e5f85215b'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x337214135253eacb3bac2c5f76595a5e406e76794e42466d7818ea7d3f98dab5',
+ 'value2': '0x0dcc7cb3a19aaad9688c570c68abf7a9c1bbe34428025b88ecb1d421877a2f68'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdda15feecd600bb36c3ea5c22ad91ac978b59c1d28dfc9f51301b2ea175af01b',
+ 'value2': '0x6c7e19a0b213f40d94e1f1e88dfbc19825a8eb49bfc53628849f0634290abd59'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000119', 'value2': '0x00000232'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000cd', 'value2': '0x0000019a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4e3c4f9159a4451cfe25c0260fac4239ca4639b18a5302da4b91f5a6453fbb2b',
+ 'value2': '0x085046ea607ebc0f1ab3ea1cb2852f8aa904713b5877341d46ee69bbe39fa0ab'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000007a', 'value2': '0x000000f4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xec399887fcd1710e83bb9791ad6a65330faab09ed54ae3d5b0a0b2267fc74938',
+ 'value2': '0x8224ccb221e58f18228f2c50356b996d36e06ec3c32261c80b8e04be0277b9cb'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000190', 'value2': '0x00000320'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000a3', 'value2': '0x00000146'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x377758c41a7315e9524382f9a91b6e4644836002456037cb31c48f7f75cd18eb',
+ 'value2': '0xe1cbb3a429b2da104483e5b12be3dd20470ebf776b15fa84fb03ce3adb00d52b'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9919351e70f15a35a2987aae0b2cf2b78e032ee29b4ac4366fde00b00a0a660e',
+ 'value2': '0x01cb530214b07815cd90709c9e2412c9091659e5c9b0d13e16d61b6658477aea'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa102f5acedea3a2d777fe86621ae607f6b0fb53b69fd0bfb5eb83ae1eaa96c67',
+ 'value2': '0x343ae90b01faf08fb9fd2aab093b839f2f3aed93499dd96f17694dcfb1eecb80'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000f9', 'value2': '0x000001f2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000017a', 'value2': '0x000002f4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5a31ddd5dda7d4f3b047810e392b08bcc16ff74a5715775740372d4e8b6ad99b',
+ 'value2': '0xbc553cc7671d0efe92c714a95647ac121c4f0b59a31d2ba3999ebb9a86364d1b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000e5', 'value2': '0x000001ca'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001dc', 'value2': '0x000003b8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000d2', 'value2': '0x000001a4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2e3a3be8098ced2751a00adf6010948d9a22ec246b3d26e62b2be621a704c2db',
+ 'value2': '0xcaed116a031bbafebf496f42a7f21707bf74e217b0467f60e87eaf78f6e0359b'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x393fe9ccca1f5ee52b396cfaae14fab7dc1de07dcbdca47b4253ba810ec0a25b',
+ 'value2': '0x51b97b9cb7b1602bc55e533050e517e9412634a352f6d55fad4a67beadcdb91e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xadd580cea9b3798c6e208fd1faef97a7d0ef2254661deb13e28819712cde574c',
+ 'value2': '0x01fc1e47e1ce47fd83d5c482f4c4fdff14c96d2918ee2982506b0eeb056c0b04'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000018c', 'value2': '0x00000318'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000ea', 'value2': '0x000001d4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001b4', 'value2': '0x00000368'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x15f18c8e51f82d57e268489cf18349b2fc3a527213cae6703f8920271098573b',
+ 'value2': '0xbafaa91dc30dc2d161905e564ac359fe08f3d376c8d566c2fa37430accf2b6bb'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x64a9ab61767268f7a308bb2d0e9ae05067e7460613315d806e72f6dc5ac667bb',
+ 'value2': '0xeec09a0d0ace418e246cf517cfd23c0f7de5e554f8ec827bfb589cd84a0f5a63'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000020', 'value2': '0x00000040'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe732e97854fd53a94a103e5429a394b71d152f61595bf5a34340b91715f6ff31',
+ 'value2': '0xfb938cc0adc2e58ce49661e5300328120d1891015fd366fb09f3fbd3fb2accbb'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0a520dd061f0c4ba4c1abb632d63db839a2697ff3f9097894989024b26b18cfb',
+ 'value2': '0xd428e22c4bac37a51c6fa56ceedaf8e473b17c3e4f79147e26c00dbf28b18430'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x75d7499352e8f78b34b211b17d6a8ec0ee8a8725658b0b4567c645f58235cb81',
+ 'value2': '0x6be1ad962535a73fcf8ca1c95770b794a9d235a4b044cf2226a8d9c5376fe3b2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa063772a818ba662fad0659a8b15c544eb7f74c7b7f2e1b893a2f71310e768e4',
+ 'value2': '0x56afc645a674df665b8e5e2ab0a25ccb79c176ee9842108bf521e2a25603d7b4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000bd', 'value2': '0x0000017a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000c9', 'value2': '0x00000192'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000012d', 'value2': '0x0000025a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcd51ab28aac9bf7b3c5367990eb7ea36b88e48f5360aa8996ec637a268c3b907',
+ 'value2': '0xb8731ffb59b21ab963d78ea080116316ba0e37101d2f1aa86e45c1df4dca1b87'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0cb6d1ca8f4cff4a0985c4ba3dca4964d137e0075b9f8cccdf7f447b73538c87',
+ 'value2': '0x626fc54cf3e779b34996116ff93b8c356843056226a81182e446415c4e3544d2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000059', 'value2': '0x000000b2'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000135', 'value2': '0x0000026a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x25f68c17877dc5eae49749dd31c7a20a0bc67f8da76da974d6b4d66e87a25da7',
+ 'value2': '0xf4c71323162e1d9df2349e20ced89d066814667ae19c0e0b16cb851d45a80247'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xce24fd6f501d4d17154fba516d4074a95e033bf782ead37ebb6ccadec4595220',
+ 'value2': '0x0822bf9ad107ec1177c702463b0112868538a5f9e0a2305f99797f8c7cce2129'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000120', 'value2': '0x00000240'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001af', 'value2': '0x0000035e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a2', 'value2': '0x00000344'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x56ecc91a289c8841e803002327d49180e925fc4b938f1fd790c3fea168ce1d27',
+ 'value2': '0xa36071272df4e981f62b3416c3d225be5793a9121ac7b3fa5f6276fda26c4227'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1a228d6bd1289d703c84d21299054970c868cc939fb44bc41678455f45bab7a7',
+ 'value2': '0xed32aaeaa62b5b7dd45946e7bbba7a9929970d008069a577522bc601e4920d3e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000061', 'value2': '0x000000c2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9c5772315905a10980d686ad822c46736b5922109ea154f165905e3ada254904',
+ 'value2': '0x0a9cf18857392afbb4d44094d103c795fed0c534f7ad045f884bcbee29fb76a7'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000000cb', 'value2': '0x00000196'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000077', 'value2': '0x000000ee'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd255815dc2d239eb368ae9bbc63e969d9b099251bc22d540b1f10934a3385967',
+ 'value2': '0x9955705e22c8fbb50ff1e10a82670cc0317b8bc8f70c68cf2a54b6d0b8d6a967'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x022df940e17c161f1cf41deee6d7fe7122c349a01d912828d192a5bc3ce2188c',
+ 'value2': '0xad1ffa416dbb2d93ad78001b47d199a91f619fb0dbc57c49d577bd1d0f30b0b0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb3b082ccd826fadc4b62dc7eedfea577cc2e14728e1a5377dc3508ff2d020967',
+ 'value2': '0x78131bba6f3e620fe82a0e4d624c016c46c4f2115037af8b309df461aa5b6cf4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a4', 'value2': '0x00000348'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f0', 'value2': '0x000003e0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0dcda36317c94ece2032c5cf52359d1a1b7ff181abe5580117636f13f971b597',
+ 'value2': '0xa544a79ab6143b9826ecf445ca24dcba052d473fc7b0f2cda69a481d325d4e17'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000015a', 'value2': '0x000002b4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9c5f253ba64b8c5d415ae832aca96082b428d23a83c5d6854840cf91dc7007dd',
+ 'value2': '0x3f8746372cdbccff48fdd72271819dcd849cc64d38e73c122070496cfb865257'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000017b', 'value2': '0x000002f6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000010', 'value2': '0x00000020'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1f476bda3a6a15ffbeadb6267fb2150afa8b11379c0245302b9ab4a1564ff5d7',
+ 'value2': '0x75ec1e69f4805057afd6b6f9d9ee0dab532552ead2e33478ece0003e6a09da5f'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4400ca338dd7e7ded6fad7622ed62d409f9828ec6c2b123c16f110075371407d',
+ 'value2': '0xe7982d0bce80c9000b8608d12f157973093674fe401873939ea6216d7db50066'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000180', 'value2': '0x00000300'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000112', 'value2': '0x00000224'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x40eff439fa0603dc27da2b7f4cc867476d6183aa08ba84a2ccfd9bea27ecec37',
+ 'value2': '0x517baa44379c1eb1a54bbc5d17ea9d05c7e0f431196738b9287a667eb1d18db7'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000060', 'value2': '0x000000c0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfa6c5f1af03f576f6df6d7ce696e9af9206e30db76c9a51c4e9f4dc04fea72bf',
+ 'value2': '0x8c9e4363a1e4cfc952c434699c2e8538890dcf9ecae0d06f08f26b2dc6239837'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2feaac2e47530ad70efc8a65d2627791868261592a157968c6e4d93f4bb87cd0',
+ 'value2': '0x248de72aeeb3f96a3803e6b9876cfc9e4b95ca0b8f8731a9d613e4240d37ffe2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8c8720370316d90eb387cf2595c3f28184035b33fe33e14a1b11631cc659084e',
+ 'value2': '0x63fce85e5a8322f68db6fd78e436d5e57932d97afa141045c259082d54f74808'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000008a', 'value2': '0x00000114'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x746573745f636865636b', 'value2': '0x00000005'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x69fb1a26ffd934e97efd84b6ba2497366283618139380fb935edc6df8931a68f',
+ 'value2': '0xdea3fda231214e0a2ca6d5dc2797781cffd1aa7a8933cadee66e57f99f7a6e8f'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000058', 'value2': '0x000000b0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x799617c83f1f9eba53177edbc54e4835cbc9f8cfdd73bc0ba20f46ac899cf750',
+ 'value2': '0xf45ed49b3b8d2745485cf746ba03234e9cf3f1998b528010038c4a4f6029da0f'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000035', 'value2': '0x0000006a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a5', 'value2': '0x0000034a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x72820aba373e7e5ce0541b61ef2790711226f657c95024f74b4449112ea2201f',
+ 'value2': '0x8bde705a6131d1e0f7b514a3880a752a3c490abe3e86c4e745d8a2ef8b51402f'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa972dfcb4569f3ee379fade59300bd4376d54fd3e86f5b69c4cc8fa8cc46ea9f',
+ 'value2': '0x7a8ec676bfa89de945ff923a02159318d2c90272aa17d9b18a90443379ae5742'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000009e', 'value2': '0x0000013c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000015b', 'value2': '0x000002b6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3b3b1e35b3587c018d7515f03beafff8ce8f5f35471d390def98ad58ba71ff9f',
+ 'value2': '0x8ffce3e4fac405ad5b5949e64b9c4e0203cc1419a8533b8447d463429255af1f'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000160', 'value2': '0x000002c0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001a1', 'value2': '0x00000342'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000182', 'value2': '0x00000304'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6b8f3a401b3af3080233e5e5429e9a575b221e77f95d9feafcade838cabc515f',
+ 'value2': '0xde7d9cc31e9bce6eb24b639c2c6a52fa65234ea424a2ba12d3b2a1ac835ceb5f'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x00a3483dbecb8a05cb08225ccf9fd26a6184478af605f48a660c64c69d2ba4df',
+ 'value2': '0x2196d1774acdb34d5ce3094a106e9535170b93fba8811c49ef3faa60875e0408'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000000', 'value2': '0x00000000'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdf7b33cf463e35fcde2d4008dc7c1b17f25b8d00f9e287178a5eb87b9fda221f',
+ 'value2': '0x14be694162139a7cb24a39dede4114af7456e33719f260cbd2b52cdbc3585039'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x61a3bd72414cee1048aac4f5f84f80dafa62bde8cdb51f5e1d7f3421629d9cee',
+ 'value2': '0x7bd859a4c277e5c1fe2fc7311143c48809e979b87d2e5546a8c66dfc2eaf220c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000047', 'value2': '0x0000008e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000121', 'value2': '0x00000242'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc7b1f5d1e253ee1e135de1b86e5b0585b5c664a3be476233d78e292471f2ea5f',
+ 'value2': '0xc06678d81ad49d27212569cba7d0d1f0ea86ded0de0656ced946784aa73ee0ff'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc03860a4c290e3a6845a3bbaa83a844fc0e7143110a1c2a0e1b567db83bc4736',
+ 'value2': '0x3106c39c437415d74de532b7dcdc3826fbf240f5cfc0dc3853e2de15d3447ec5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdd5b0de056365295f56adbe92f14a0a375d3cd40887a389070a2d48b7095064c',
+ 'value2': '0x90468ebae885bd7782fe93bff2ed8bac9f6b98c1dceb8f734d579b772e73b364'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x81f67e1c38f6465f2b4673497df3ca5888c46e6cfdc9b85d20a187e237700e9c',
+ 'value2': '0x13475ca78adffccd87614629ea6c9557f51c763b572784996d851a480aeb658c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6278c6e6fd06ad08b10f5c2fc21cb975d612d6335c3b233c64c119442a0a47d1',
+ 'value2': '0xb30f34db54f73b1c508a9484ba8f88dd520086716a29feb202eca476fb552aff'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x12290f1f6d5c1de3e70285e1fef9be9b65590fec277af2266bd1bfbfbd0b04d2',
+ 'value2': '0x6d6958970ea3f98e740c67b2adaefd40b86cc2698f2017b05dea27082265a777'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xac75932d6aa97cac87e59c072a9bd2db532139d5349b5446f535c5df28b8d644',
+ 'value2': '0xeac6d2983325ab9892feff867c07ff821a656855ef737db4001e7bbddcc75b09'}
+post insert node.
+Ancestor gen:5
+Post Ancestor gen:5
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000245', 'value2': '0x0000048a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9b4ff43df9d9fc6dcf6cd8c25c64fb2e98c15343505f5dee9dfe8b4d3a8b8320',
+ 'value2': '0xf11d8b6f6dc066ee021cb6211091cca6a13ca2c0878b09b897eb57687d7b3ba0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1b93955c04daadfafd2cce3c01062afbf46d3e226b62ba14ddf2ea6d90f722a0',
+ 'value2': '0x492e7919bbcbd5f5a397fa68002d01b1f174bbd770a951159b20bee42ea59c13'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd843183f764e072ab2ac9ee9eed8d8ecb32194fb817288b7b38b022915a8749d',
+ 'value2': '0xf3dd22b2dd9e5db613424636919ff827f6e503f02214c73f90743d59042a0294'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8899b40d58007047931fcc119fcfaf16fcde795d733d07d222bc3bb207375026',
+ 'value2': '0xc691d680b20b4e5e7fea8f338fa3e7406e8f80ebc27afd5ebdda05d8c2e7222e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000243', 'value2': '0x00000486'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x11eb08503847f1115b213eda133327e89ccae29c2c40fa16e4cc95c33e5a6bb0',
+ 'value2': '0xf1ab8c6c55b86e55c58c75072bd7274ada2f99d63454d4fe111173ef105d56b0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x336619e8dda8ea4d3e3804d27617711fcb63d27913667770411162c1b3945630',
+ 'value2': '0xd0c2a783f377b59e293988526ed3e197de1b8e1fc8eb5524ee9b0a8599f0d536'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f5', 'value2': '0x000003ea'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000020b', 'value2': '0x00000416'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0e6de59b41b8a68d2556c6dd4a6e719fd9cf72fb62ff2e00dd183fc01307b270',
+ 'value2': '0xc6200b548f8f0f893bf17ccc18b42133b11f5e2c7b1298ded59327b67396e470'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe348192e3f912807c74312f35fca861499a7b772f7e4a81c0af6c990f0f24949',
+ 'value2': '0x265e592b40343ff206e14dc61746ff0013926c192e5f6e102be81158132d95f0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000022a', 'value2': '0x00000454'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfd510573ee74701bcf1eaa18c71bf7e2abd8d293b9699a0094c8b12e861b41b0',
+ 'value2': '0x8c6be59b4984dcbd6fdb81ab90505fb279bcb93f0ebc0a12be9a737b7b21fdf0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8305d017e031dcfb2298574188b08fb9a44ab5cc911de72249cee2af741e3517',
+ 'value2': '0x6d2ca17c002ce98f455db77a2c1993974266fd0a898ef4e753a7c02e72cc4594'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf311d5d9f53277c41d9723712bde4ad98c28cd3bf59c21d1eaa2f7467478fb49',
+ 'value2': '0x6fbfbbd00c7d1c854642031977c371506bc51c9b7ab485212cd153ecf13874fc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x354ea3de4e275b9e83976941766bc9cc434d5fa1a346498c779a7e4e27026fc9',
+ 'value2': '0x89d0429747811be36fe90835458f5935c880f508e7144519e19c0d020ee092e1'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa0c6c46a5661be74743104a1fb90bea7ca948e35ee5ce6be27679b29899db6a4',
+ 'value2': '0x86afec0fd1a1c277271d955cbf1179f5739306be28bbf6855bb7b8b7b19771d5'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000024d', 'value2': '0x0000049a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000227', 'value2': '0x0000044e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4d051562dd9dc36a5a1baf8d814b26726e91a3972ba53cec1a6a6e8782ed0408',
+ 'value2': '0x4a571bf652b81571aadeef820c4722d4b963b204b45aab8f2818d2b755340988'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe413155cf427763ca0446758bdc84141345ffea0ac1d5a1761d6b6094a10fb62',
+ 'value2': '0x1ef50e29a9b0b0467891ddfa11e2e05b20fd0995849be2b962ad07999dec4943'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f6', 'value2': '0x000003ec'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7be7fbb4ba953c85958244cb09049c020ce955e1fecc9605cf78c2b9851bd9a8',
+ 'value2': '0xa3391acd331792a3e357af75b359563d21ed80b022a2ad9e16e147a61817b1a8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5d2257669f760326ab963d7f18ad4f23fa533c90f6345862d08794e6f94a6b28',
+ 'value2': '0xf20bb62248c1fdf8d47fa38c458805beb438c7056827dc0dde79be5ecb169c7d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x448c84df75764cb77ca3e87780c0c6d93daab058921fd4fb680c432cc49d79a1',
+ 'value2': '0xba6f7c2da930e2ed2e07ee4a7ca91d7d4fb64d6d99ac605435ebb38f5ffe6468'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcf0bcb7c8edc94415736c4b24166b1a0325ce3391a4eb16805f5c6ff45c9520d',
+ 'value2': '0x74b2f89d87b5c3c0adc6d35354706b85044775633aa4d23f5ad064a3aa88c080'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x50963876791a01fd79bd3caf552b1730d58b82b347a252f412cf4a50eab3f11a',
+ 'value2': '0xb1a2ac6f697e72004f9a5d9cad7b0e65712a97567b8e3b9a9fff7fc805f1210b'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000020a', 'value2': '0x00000414'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000257', 'value2': '0x000004ae'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbc612d3017d8de81e067ce4263ac23145f5d193402d4ab43de4b83d5e23ff3f8',
+ 'value2': '0xe154e40f45c0447a049abe393a77ef4f422aeac66ad559084dac99d9efbd95b8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc16d7bf9212a85bb16acea003a0c4b30214e1aca6b64160794fb275193e75161',
+ 'value2': '0x3b5b6b5a652c387df25a34306823fb1051997587e95653f89461e787c31455aa'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xea22bf838e2b94d0ab6b25245bcd641c629897c6e7488702f4811dd9bfea1b61',
+ 'value2': '0x194322dd7d7c7cefb71f7350cb2734e591ca182c1a721ae8eeec75436791b908'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb72a62ccdb931fde75821beb181302358d5e3877ada86d2377180b4f16ef49f3',
+ 'value2': '0x885de80a80959ef1b801da862c01a8cff20eb29a24359540b3fa9b83b0ebef7c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000222', 'value2': '0x00000444'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1dc67a71c4c5e0e7e3885460b2a80531e01915fe5a18a10def51f70dcb0fc604',
+ 'value2': '0x1d6cb6e610e0359cf4291b6a441654ee3672c838202445e6a6e8f21d5548b6c4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4d5419c629c2118c66a500b74d564d084273479c654c404dc161eeebd0063f90',
+ 'value2': '0x9ba1fb4b92beb8b237f2f0472a38cad6e4c53a43989de9b547cdb424fa71d70d'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000226', 'value2': '0x0000044c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x67f10b3488a79fae41ed7e3edded2c883af140707d032bb180ba5015718e0624',
+ 'value2': '0x3a26696d025f922b8eada2dd22388a10186b0f02e427565289a1d1736c79d2e4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000021c', 'value2': '0x00000438'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x861bb92a2cee15600bd019780939c014e65871b035e80da71396a375f291ad24',
+ 'value2': '0x8d20fe35dcbacf0ee4756969a0c81144d5f3ec1884b5d615012592652c047aa4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x98227371483268e736ad74b007e7c8ca9e643f27a63bb7b67661b23989e1b268',
+ 'value2': '0x6c1311e912058f0808d89902f93dfeb9623cf3316115f99d3f982a9ffcf9fcac'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5810db2124cfbbe3e9a07be2d41c8ecce4414e4ad11e98f610f55e333e7d6b28',
+ 'value2': '0xd96b6f97f03b7a0494fa284d0850bdf1d43e8fef7567002878cebc0e56d0cafe'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8f8e3a6ae60ce45081da4c3e01c9ab4268057bb76a3b46d91055e7652beec103',
+ 'value2': '0x0322d7e1669e4c379630e5f2dd1cf5b395a5a08645a8c6e05966446177b18150'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x46afb4a0c3b527d6663907b684f758013cfa4ab84312b77e1901d6b1bda74974',
+ 'value2': '0xcff5b58c1261124f0d9b758728c5fda9a94b77f622860909cc24cfdf4867e3b4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa163538110d462066e3c789e20de8470c873e83d72a96f364f9e3ae116b55f74',
+ 'value2': '0x220af3168d155159bd4cea55fcd2ad67d09c00dd8f615ced5b32f5bbc37ea939'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7581144bce6f51a7c78cc4568fba11ff455ec83c09ffef5c3a06cb80a52c10e3',
+ 'value2': '0x54ebea0e464b84e21f4eaf17156476f87516cd9a899a965c57ce1976f886e5e5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xee54081c696cecd62ac6111dfeea503a7740d2f058a1335b4dbbc7eefdebabd5',
+ 'value2': '0x8714b509444cd36d23fcea4dcf0465fe7cd157e5327da0d8e612223a1aabb18e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000024a', 'value2': '0x00000494'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xba5fb4b30e27119da0728251849c7737ca8efe0ce9d92254162fd0622c3bc58c',
+ 'value2': '0xa289daa72faf3cc2a9ac91c7fe9b7e06293af12b0f302438fa4e00ba1282178c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xb04ea80bb12b29cd75a1d4c87527a070d8d6dd67911d90ef45cafbbd003ea08c',
+ 'value2': '0x3de328780e6d8b0a14c52c04d06b57f5449a17d1ca6cf8e6d1e46aae3aeba200'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000244', 'value2': '0x00000488'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xda5afdaa9accfaa6fb48d899978947ee90e59135b41d782686575a0aea39ba4c',
+ 'value2': '0xf90f054261880cf71c0b5c17ff1d56eafd4c3f799b9a81250bcb869d282abf4c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc22e7aa72e28bc7d1c877c1839bbfdf20b4a7b894a1159e33ce8f106bb43744c',
+ 'value2': '0xc586e9730bf0e45e1a37297ea4fb8c2dd576fab5d2b0b5d19ca6082a815ef4bc'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5af92f36d307796376c594deaf58dd62ef9ba6648fcc5ff2a32090e8baf069cc',
+ 'value2': '0xe9d88f06da584814adf599f4ea3eb58cde4380a772e1a82a7dae298b80239128'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdb8928bca70742bce845895622f8a8a730d27529e1921fcfbba8f52b06e964f3',
+ 'value2': '0x08e6ad555a12fb615b4e95fd0be5c40b685cb009d40729f904aa5b1f829e4fc8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000022e', 'value2': '0x0000045c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000239', 'value2': '0x00000472'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfd4b1ee211f7ed32c02095282c9a8415205a11d0d85281cfb957779861461d2c',
+ 'value2': '0xc8cfca5d3e2766b508b95511ddc8a01852e0c124c272a0c9b9cedb7ee6a1bb2c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x455af0f739a96f3df5a824ff65741c83dc3623ca2f3ec5cb9929344e1bb0456c',
+ 'value2': '0x423588c055d04413beb343b781ae70fdc525dd0948cf7a229fdd72268240a92e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfc1776e84e9eb62850979954263f0944db20a7bedc10ff61097f6012d56cf1f0',
+ 'value2': '0xcb6cbae5b2e41b787b5fd79429dac7d6b5274ca63da3342de23be63166e3ecac'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x40060e58d6c0b51ad25a6e483b3bdbe9aa080d47d3878f1840d69b326748e97a',
+ 'value2': '0x235859ec6d13776793606a526d62e4d30bc875c9b3b611859c9e9bd170c8871e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x03745ce017f3a14fd08d0ddd851ffa387584c6dca5b6b1ce62476cbe7c9e027e',
+ 'value2': '0x33e4beb6d99d12709b0766d9f8ced918a04572d8a2737c7f3e122e7ac31ff92e'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000213', 'value2': '0x00000426'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1fcf400e3d6f0da407c1330af31a6a53b1f6cb81185196b22ec81ed08ecd699c',
+ 'value2': '0x9bce2a8b244b39efc960564281d5a66b9c455d897f2f00dc8e77a92fa409489c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6a5dcd78ea2ffeac57fb3209b28052a2b256ee446efbb2d3e40141b34c89a87c',
+ 'value2': '0x18845a5bd5709c0386ea797f7646f722d0cc96368fc873538da2ec6b30152629'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000250', 'value2': '0x000004a0'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000210', 'value2': '0x00000420'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x56facd1bbfb38f668c4b1649b52a75af28e3f4970c6c0245451113dc4159e45c',
+ 'value2': '0x4323ad78e9b928807dec9afa3bdc7c0311611bd88426d0c29e78b0ad49591b5c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcb8af7f770d7565deaf40e384a1aa1907839a12c3db06255f294dc2cf67080fe',
+ 'value2': '0xcb8ecbe969c00b9c23dc80650f752e879a5d51aaec875491d0e15631c8c9431c'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000020f', 'value2': '0x0000041e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xae74f619f1a64c519dab7d4e0e95290af42df7a3e8221c4d1fa5afde3b06731a',
+ 'value2': '0x9125eb08a510042c9c3d9070035494373db482fc65fe9f8f909f28cd6ae3c15c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xea069f226c91ac3ff761ed8bf34a5cb3f065e9606af9c6ea03ff69d819c9cc1d',
+ 'value2': '0x4745ec65078ac43629214b18dc414023d229727bd350ce13dc365d98fd80781a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000230', 'value2': '0x00000460'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xcb2a01507ac11ad13bed2038a2003269d256adf291036626bfeace4212b7223c',
+ 'value2': '0xc851d4ce8ade8b7b48335a14239b84920c0205266b275a662ee993bd9c8ebe7c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xc2c8c4b8c6084b6e3cf0cee4c3d4f2052de2f96a4970cac763914f304b03e266',
+ 'value2': '0x2b0143f35a9aa8aad6e8a37073c0211d751afaee5b8477fca6f81de9066fe62e'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe539f78f7387bcab8a205bb80482daccbac6191b18c73364dd863a9cdde2b1db',
+ 'value2': '0x7a56867e4b3b48376876f6a28a271260834753b95a805264e3b6b5fea87f7f28'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x861ed9d81c4982ad1d0ff8c8805a76ec43f46263650c128517db4327369813f4',
+ 'value2': '0x8a1869cd62270c047b0fd689d8268dbaec0af644efdf4690ed809cc29e3f14e3'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x15b1569c84ff3ac7ab277237a0b62391161c760d8ee13bde3f03fb297be08ecf',
+ 'value2': '0x9d82079cbe0c77efaea5a929f3fcd72a6c55efdc64ef2907e3e75f7d5057b869'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa96680b31fa84cc62a923c58362009a34d839895c6b159eae67f3527005c1d08',
+ 'value2': '0x9c484c08d9348b02d5199c966daf7a3119dc5bee882b342902838d0e6698ec29'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000248', 'value2': '0x00000490'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0e83ecbaf6b22bb00f4ec7f45cddf005c11a65bf625be652d890d06540e46102',
+ 'value2': '0x19fcfd7d3bcc03576b9d3d001e358454ee15b53a8363e744964fa776623aac42'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x714583cf54670dd91817d65b581c32f01d3a08452b86e5279ce35bdc02f17076',
+ 'value2': '0xae4092e1c65265706965d5fc4f440138c448a8211c774803856ac64dfad44c82'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7687cfcf7ecf4a2cb178e02cd567b2df7cbbe4e6e1be37dc4cc22c6c10cafbd6',
+ 'value2': '0x89e837e16f5bd5466fd61b3c96d8a9c513b5d8f285a1d9582001cdb57f06e636'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000208', 'value2': '0x00000410'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3e32dd69d529293e414eb91e976e4da0ba1dfd2476007534fa03a2f8760c5282',
+ 'value2': '0xf4777aeb12080916e9bcec302bbcec3ad04eca02689bee2e5c2c766542c21722'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000024c', 'value2': '0x00000498'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5a8eb54e8f804d5c2cf21649bf1ed14d47903ae9dc460e911f5de718396fb262',
+ 'value2': '0x4ef60d929321af39ce473650561965b1f5f07a047bc0f75cd55a33962bf021e2'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x93b1f1ccca8dcbc156e300d0ce116356c8e3f95f11bea868ce1da4737f433714',
+ 'value2': '0xd4c0816cea43a7155f2ef784cecfd610e934ddac2b95bb414194ae60f47b2962'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x2342b5184fee2b6b8e1c6a8d7cf0700b8e5fef2e1376a662894c36b91b525e49',
+ 'value2': '0x6d0cc4b021699343b5ffcee9fccac6908c0c2160e348ea505ab698c5a1461ea0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x3975b9a23d2cbd4c09723e51afc4bebc37a10849ddc908a9cb633b81ce9bd9a5',
+ 'value2': '0x8f9b93330d343d7b9eb8b862413dae91acd4c81d8901c0101ee30a01c293a5e8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000021b', 'value2': '0x00000436'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa8ae36feb01e97927a1325f2b2d33eb0ec71839a345598244ddab59606295332',
+ 'value2': '0xcb1ec7ea41c67249a076c6b5c531b0506dd4d33dd287d6cd82424deb9c3c2332'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4288f1027dad60ee7865386f7b0730fbe681e7f17c43ee76d8adf42af3d98d32',
+ 'value2': '0xb14bdc66a88c41d8dc615127309acd9a5de37c095f41695469f59a482973b3a7'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x06efbf3aa597572f4d03c5b733b49c83e11c2b0dd480eac44cb6da9b56aca832',
+ 'value2': '0x59364fe132704cd9849d6f0df4083b4cc9bc570d363dede94ca6d6fbda945a7c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x0170ebb5c6c4903660588f8f2a0ba0b81ccc420af07d3ad59f02da5a2151d598',
+ 'value2': '0x73326c12176fd0a32270444d584665b1782dbdbcb5375f24b18f6e1b468e6170'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1280f7572cd0cf2ba1ac2dc2cf836c6fcd4ad66addb7c7f4709371f6724d1a2b',
+ 'value2': '0x9fdce3c4e8abc642a75464a81b027d4dfec25ad573e34ab0edef9ca16a3bf4e8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x321e67bb14ef08059519cbe14a06d27acff880073c7d23ccb05b7c513b70e449',
+ 'value2': '0x91428f07aeb77d8d68c344768e6954c0b305ff96c4df2bfc4408b99b98f3abd4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x094ac641badba49075736471c1bf60b46a48d59ecb90fa3eb1d63536dedbffb8',
+ 'value2': '0xe4041ea999858d8a4b0fe0f09f4255b52b8952356d9db89732914e8d3ccc3e6a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000020e', 'value2': '0x0000041c'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x1d02f7ac7257ca28c27f12bcbb460b838e7efef4de2061d185011c36e809034a',
+ 'value2': '0xd17184c147d696c99be1e1223541a8a8ed0bf1b8e06cea035e754303df5dac4a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f8', 'value2': '0x000003f0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x943406e8c46c3fd43e94655c7076ba9fffa0064f6b785441d6f0ee83cebcd4e0',
+ 'value2': '0xf5519d514169c4b3eaae9eac54be45db6c47ae9f0a4ba575435b39d3c79f984a'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001ff', 'value2': '0x000003fe'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x135d361ffd5d22482c826efbe525a924443e7579c7aee63f33837b4a9a71f94a',
+ 'value2': '0x340bcadc86799c73c6569cd7f690097faed6590df700607647d317deb7e2684a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf79b46f0e7f62f53349d67faafd4059dbe939f7b5adbc6d47faeb66017629af4',
+ 'value2': '0x8c68472b438894bbd332d35ddcdbc1ba52427282c1b75660025a579b34079e66'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x9654feb6013e6cc614dcb0df6d4d4b8f1847110acad38eda44837ddea97f01ee',
+ 'value2': '0xc02c499f310b259a7e056a4a7639efca866fc5f86861254b5ee59c03b3fe160a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xdaae6f6605ac625f9fc70a29c96e7799d80ff2e0351b9f2abe642178fde5335c',
+ 'value2': '0x7289cd47d6f418228fd7c0a1d4675d50a046c76e17de4f0991789d80c7a5e8ff'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x746573745f636865636b', 'value2': '0x00000006'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa29db8d343ada44078fb11f9d0f046672653f38c011b36a0bd687905817cc66a',
+ 'value2': '0x82e282c058f3f20ba27458bde67b1861a36c8c37aec7c40fcefa4100d0c1eaea'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x83f5c5f455677c0a91e04496b8cca5289df8f440e23542839ed180fbae8adeea',
+ 'value2': '0x9ae1b41e89085989187eee71eb424959bab896f59617b14295e101c74a69aa40'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xeb7a3964d6d5eac47c980980791ebbf86cb1f7748daef1b6c04e3fdc686d6f7f',
+ 'value2': '0xfb4ade46ad25317ef9efd1abb39cf0c46464d5dcd69683421595cdd63563d1f4'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x05a5c4a661cb90302eb770ccf24423086cd3d211bf6258e641096afce895b474',
+ 'value2': '0xfaf72a719400481a1cfab5fc7f90b4cb9124ed52a5c3188063e9e131c1a33cb5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x613e4bb4dbf21110fe422587f1ab6a87beae6a745126d98979a5bd785cdfdd98',
+ 'value2': '0xec55f381f480f925828b5aa136dc72f892698b841c0314f8133fa871b0fd973a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x980f4fd08e98ebc49bf1790d7f502e661e74bd49d4986855b89f477598534c08',
+ 'value2': '0xe468665b5ba90fd3f75ce0bb1e35812d3c5606bf21f17b291b1b66a23c6cefba'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x430c3ee670b86d9fad4c3a1ec2f1a448b5067847fe8d5adfe716540cedef12cf',
+ 'value2': '0xeb318eefb10ee0506365ff36eaa8287113dac7776923728dd4a5ed926bc119b0'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x206db46c5677faabec640f170c60a5cba7977878e2b3b93d5245375eb35a6ade',
+ 'value2': '0x06b48190515aafa3dab5ee52a77063f454cd7dcd28cb145a4103f29705099a87'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xaeb91a793fe53879856bb42f3b7ac7667b03e60b037749c3d41ab67329c5f80d',
+ 'value2': '0x02abf804650198c6669177a27c6a53627091573a3d724bac1e94594512066ff6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001fa', 'value2': '0x000003f4'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000211', 'value2': '0x00000422'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000235', 'value2': '0x0000046a'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x99b5f59f4d41e47e2a7b307958ef0ae757cb85f72f26bcaaf386ccb7e7cd7086',
+ 'value2': '0xb5b7adff699c783039a7530d4d45fffdb3f9493d05703e36fa1658cbf1dd0b86'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x8a71fb1cac6f8f3a4b2cf9fd5e6fb117fa511ea5b79fb5d82231d85e37923f86',
+ 'value2': '0x41254282b7ab0318b2ac337f2092bc16db40429df3a124fcaf1b22dfc84510d1'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x03cda30dbc10e668ca4b38c7c512f01ea2a2b148c14d8c23cd9454ba9c7f5486',
+ 'value2': '0x4cd4c02a5155baf428ccf9767b6b2547f4904a66317fe9632a8c611d477d2c62'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xa1b4fc2dbc90f6b1d026c164fbc03d745ea6f73a66e17548b55bebca0ad0a29d',
+ 'value2': '0x5c783cb66e1861076b924e871957f7db372f1034573bda7986c82bebbe823ff6'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000209', 'value2': '0x00000412'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5195d70b450aa0071427c8518d939ba3586119fa31f09b7902ac40a2980468e6',
+ 'value2': '0xe7b0bea3fcf50ae9e8bd8e8ba93f119f241206c3fe6a7673647b6038630241e6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xf227509be35d932928fedfc61d6a98d6444446a94d5abc5413a9955d9be59497',
+ 'value2': '0xf0b70a411ef2dd9b3d162b7f83f845adad0785657ed84abf95a78567a2e3c413'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xd861c5900bc8beb6f31dbc0e314608bc776c40574ea2ac700df960215a7fb750',
+ 'value2': '0xe6335ce36d85ce99e04650e7e0dfc2e63eae01a9692407f84846601c66cd2fcc'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000228', 'value2': '0x00000450'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xfd86a0070e921baf68c5d53bf1ede96f2cfeecdb3d232c2b515cb944c5c6a1d6',
+ 'value2': '0xd449cc45cfb53dda4d8572507b3eaebe8c3a334e69ee78b0a40f473117c4d9d6'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x4e4f0f094a348a905740df68541355d471fe33960a932d16347e8423df78bcd6',
+ 'value2': '0xcad939711c2d0112065b5040e216600744e0e87af8246d824290eb485900f4da'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xe60dd9f50c48638ae8de835bb30922e248490a54fa4bd7163a389d1846adcd50',
+ 'value2': '0x91039af58c71b03c9cac8508085976fd3cb4d8971312f5afdbf2ec4175428246'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x41aa4f75b05a1365454c0228dd335e8adae6bb2402ccf00ac997f4be861322c1',
+ 'value2': '0x0707ba23a980e1d9e77688a15814e7abee6e717eb13c0f622eb80f847a9780c5'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6a731a611e8cd6435c80689eb5cdef25f195c918cfe3750b55d6ef58fd0a8556',
+ 'value2': '0xf0cff2332e017f49fa0d387c4e092cf91ddf30ab1a9569c2f1cb04c47f9b5d24'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6815ebde6b176178966811ded5bf11b5dc14eac821d2294201fc4e09eb3cf3d2',
+ 'value2': '0x970219fa3c94d0ee38428a166aa73f4bb4cde0b6860f56df0c132c01a246df97'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x27c967d50d98fe800858d217d94a97424a866e17c4f00d22b5b4b166156b455c',
+ 'value2': '0xf75aa523a36ee91fe1cea9a03cb81ec1228271447a53168ef3db6358db5ab634'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x578cc086e9e67eebaaa289d3f84a27ea03c3b7980c09076ef04cbb2b47eca453',
+ 'value2': '0x1d4e77b2989a7c395b1e9d052da8fa1482518072ab24344e467af5fcabb09621'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f4', 'value2': '0x000003e8'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000203', 'value2': '0x00000406'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000249', 'value2': '0x00000492'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xea638a8b6ee15c894bca1fa01f72c236f65fd180ae7bfad02f3ca9b3269275a1',
+ 'value2': '0xe074b243293de668bae243f521ec92b3296a2f9a2a4211aa82451363e02a85a1'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x07fc14cbf02a13902f13b680bcc946377d27e77b8e29b4809891539c630192a1',
+ 'value2': '0x72c2b5e8156e2eb44cf878480a1cdc60e92ccde9f2050c8604b24ad86a4c084d'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7f57d74c3ea1f4117b7dd18ffe77178ff97c0c3158f59db4c08a9f597f477e21',
+ 'value2': '0x4b892715ea0b98ad384ccbd49b95239df1d18d58d3ce153aee81125e2a845314'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7ec32258a548dfd86eadfd0cac0862e2a9032bf641eb434f270caad345752473',
+ 'value2': '0xba24a572c0f9bc95af240605ec8e49188f79961f7fe7c732918a2ccddce56205'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5858a00d3fa2a5971031e712d201a975a2d1b2188c5abb99ff970182d2eeb247',
+ 'value2': '0x6763270030e536dfca56ab8c30906bcbbaf8420bc02ddf6346284a4bd8ba48d1'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000223', 'value2': '0x00000446'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x00000256', 'value2': '0x000004ac'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x95c3e985f495928146eb251fc24580587d5e6dc84fc20e241f16cca4fe759e71',
+ 'value2': '0x8889414ef3fdfc4867770421e14e63eb3c8d07328ff7b08c28f9b67d26422fb1'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x5e8c2de03873d4cdf31cc37b3ab12cbe0847fb66e6e10f5e0b6cd7442fbecdb1',
+ 'value2': '0x2f9c394bf28fae0ee85b10918c07e1fd494f08aa4e665fbc381244996df555bb'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x000001f7', 'value2': '0x000003ee'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x252076060d7c91ed89f074c1ed3aa9ed9a0abffea79c7a74b595bda8bbf373f1',
+ 'value2': '0xea2c51eb1005d25cfa2adeeda697af780f0462ed3500235510008f50d16b1871'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x765d966338112206b057aa63d00b908f61729d742e621a3191223e1bc0a791f1',
+ 'value2': '0x309c9f99efd8ba871175be210d5797c73c84fec4d8ef9ca3532427844b88b555'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x6d87ceb418d67ec167f36b0c9b6b45926806443649e2b8f22f8cceb224ec36f5',
+ 'value2': '0x9e156d80500624628056b052429bf6f6c7f7b192486fca6914037dd58a36eecb'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0xbb4345bc1c192df897bd3bbbc6ddf12231ef1dea8a84ae5b0c98f9398ec385b0',
+ 'value2': '0xaa6b7dfdcb8659d44eb221323f9ffcf8d7fc0d79dff8dc0a76387ee8ae3743e3'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x52defd83029308dc088962bc5e83f3d1f9abb4a5897ea5b83ebd997c3e1cbda5',
+ 'value2': '0x0c7d8cd940ced06bd40cbe59641e21f51b8449c58eaf49045503fc13eb7dcefb'}
+post insert node.
+insert node. Serialized:{'is_terminal': True, 'value1': '0x0000022b', 'value2': '0x00000456'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x071eeef8ba9f2c7d06425c1b1b76748010a0c4c7985f11a435c10d2f435579e9',
+ 'value2': '0xc1ddb3933bb17d9242e24ad644d70a58eaa6cd64334efcae74be4d0358a2ba69'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x7c456afd63691f224c1542206a1d978f06ccefebf7cc37fc1a2543e8e8d5f5e9',
+ 'value2': '0xd94494c180f65feecbf5edb9398931d7c59805a8234edc589334ec30bdc226d8'}
+post insert node.
+insert node. Serialized:{'is_terminal': False,
+ 'value1': '0x383052304608a9cdf48cdb21c687f15c27063310db4150fbda9eae5181c0553e',
+ 'value2': '0x46102347dcb0ea6b63bdd01884d3f0ca3f43b7a13d9878869422c883f3444287'}
+- generated xml file: C:\Users\dchini\AppData\Local\Temp\tmp-10288j3cnIzc30B0A.xml -
+======================== 1 failed in 281.25s (0:04:41) ========================
