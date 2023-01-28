@@ -197,4 +197,4 @@ async def insert_from_delta_file(
             raise
 
     return True
-
+d
